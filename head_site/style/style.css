@@ -141,5 +141,26 @@ header{
 .slider_item{
     text-align: center;
 }
+.slider .slick-dots{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+}
+.slider .slick-dots li{
+    list-style: none;
+    margin: 0px 10px;
+}
+.slider .slick-dots li button{
+    font-size: 0;
+    border-radius: 10px;
+    width: 20px;
+    height: 20px;
+    outline: none;
+}
+.slider .slick-dots li.slick-active{
+    border: 1px red solid;
+    border-radius: 666px;
+}
 
 /*end*/
