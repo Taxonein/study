@@ -8,7 +8,6 @@ body{
     background-color:rgb(32, 32, 32);
     background-attachment: fixed;
     background-size: auto;
-    overflow: hidden;
 }
 header{
     width: 100%;
@@ -26,6 +25,9 @@ header{
     list-style-type: none;
     margin: 0px;
     padding: 0px;
+}
+.container{
+    display: none;
 }
 .welcome{
     width: 100%;
@@ -65,3 +67,79 @@ header{
     height: 100px;
     background-color: red;
 }
+.sl_wrap{
+    margin: auto;
+    width: 600px;
+    height: 700px;
+    background-color: rgb(36, 36, 36);
+}
+/*begin*/
+.slick-slider{}
+/* Слайдер запущен */
+.slick-slider.slick-initialized{}
+/* Слайдер с точками */
+.slick-slider.slick-dotted{}
+/* Ограничивающая оболочка */
+.slick-list {
+    overflow: hidden;
+}
+/* Лента слайдов */
+.slick-track{
+    display: flex;
+}
+/* Слайд */
+.slick-slide{
+
+}
+/* Слайд активный (показывается) */
+.slick-slide.slick-active{}
+/* Слайд основной */
+.slick-slide.slick-current{}
+/* Слайд по центру */
+.slick-slide.slick-center{}
+/* Клонированный слайд */
+.slick-slide.slick-cloned{}
+/* Стрелка */
+.slick-arrow{}
+/* Стрелка влево */
+.slick-arrow.slick-prev{}
+/* Стрелка вправо */
+.slick-arrow.slick-next{}
+/* Стрелка не активная */
+.slick-arrow.slick-disabled{}
+/* Точки (булиты) */
+.slick-dots{}
+.slick-dots li{}
+/* Активная точка */
+.slick-dots li.slick-active{}
+/* Элемент точки */
+.slick-dots li button{}
+
+.slider{
+    position: relative;
+    margin: 0px 100px 0px 100px;
+}
+.slider .slick-arrow{
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    font-size: 0;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+.slider .slick-arrow.slick-prev{
+    left: 0;
+    background-image: url(../img/m_d/prev.svg);
+}
+.slider .slick-arrow.slick-next{
+    right: 0;
+    background-image: url(../img/m_d/next.svg);
+}
+.slider_item{
+    text-align: center;
+}
+
+/*end*/
