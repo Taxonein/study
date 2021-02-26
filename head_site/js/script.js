@@ -1,7 +1,7 @@
 $(document).ready(function(){
     AOS.init();
     $(".slider").slick({
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 4000,
         dots: true,
     })
