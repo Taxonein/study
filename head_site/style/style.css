@@ -27,7 +27,7 @@ header{
     padding: 0px;
 }
 .container{
-    display: none;
+    
 }
 .welcome{
     width: 100%;
@@ -89,7 +89,6 @@ header{
 }
 /* Слайд */
 .slick-slide{
-
 }
 /* Слайд активный (показывается) */
 .slick-slide.slick-active{}
@@ -117,7 +116,7 @@ header{
 
 .slider{
     position: relative;
-    margin: 0px 100px 0px 100px;
+    margin: 10px 100px 0px 100px;
 }
 .slider .slick-arrow{
     position: absolute;
@@ -129,6 +128,7 @@ header{
     background-color: transparent;
     border: none;
     outline: none;
+    margin: -25px 0px 0px 0px;
 }
 .slider .slick-arrow.slick-prev{
     left: 0;
