@@ -1,0 +1,93 @@
+body{
+    background-color: rgb(32, 32, 32);
+    background-image: url('../img/background.jpg');
+    margin: 0px;
+}
+header{
+    background-color: rgb(214, 200, 200);
+    height: 100px;
+    padding: 20px;
+}
+.container{
+    width: 90%;
+}
+.searchlabel{
+    background-color: rgb(34, 30, 30);
+    float: right;
+    padding: 4px;
+}
+.logotype{
+    float: left;
+    width: 220px;
+    height: 100px;
+}
+header ul{
+    margin: 35px 10px 0px 0px;
+}
+header ul ol{
+    margin-left: 20px;
+    display: inline;
+    padding: 0px ;
+    background-color: royalblue;
+    font-size: 30px;
+}
+.hea{
+    padding-left: 300px;
+}
+.container{
+    padding: 20px;
+    margin: 0px auto;
+}
+.div1{
+    width: 100%;
+    background-color: red;
+    border-radius: 20px;
+    padding: 10px;
+}
+.div2{
+    margin-top: 30px;
+    width: 100%;
+    background-color: red;
+    padding: 10px;
+}
+.otzivi{
+    width: 630px;
+}
+.otziv{
+    display: inline-block;
+    background-color: royalblue;
+    margin: 5px;
+    width: 300px;
+    height: 100px;
+}
+.div3{
+    margin-top: 30px;
+    width: 100%;
+    background-color: red;
+    padding: 10px;
+}
+.button1{
+    background-color: rgb(34, 30, 30);
+    float: left;
+    padding: 4px;
+    margin: 20px 0px 20px 0px;
+}
+footer{
+    background-color: rgb(214, 200, 200);
+    padding: 20px;
+    clear: both;
+}
+footer ul{
+    text-align: center;
+}
+footer ul li{
+    font-size: 20px;
+    display: inline;
+    background-color: red;
+    padding: 5px;
+}
+footer h2{
+    text-align: right;
+    padding: 0px;
+    margin: 0px;
+}
