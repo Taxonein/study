@@ -2,19 +2,21 @@ body{
     background-color: rgb(32, 32, 32);
     background-image: url('../img/background.jpg');
     margin: 0px;
+    font-family: sans-serif;
 }
 header{
     background-color: rgb(214, 200, 200);
     height: 100px;
-    padding: 20px;
 }
 .container{
     width: 90%;
 }
 .searchlabel{
     background-color: rgb(34, 30, 30);
+    margin-top: 10px;
     float: right;
-    padding: 4px;
+    padding: 6px;
+    border-radius: 8px;
 }
 .logotype{
     float: left;
@@ -22,13 +24,18 @@ header{
     height: 100px;
 }
 header ul{
-    margin: 35px 10px 0px 0px;
+    margin: 0px;
+    padding-top: 30px;
 }
 header ul ol{
+    text-align: center;
     margin-left: 20px;
     display: inline;
-    padding: 0px ;
-    background-color: royalblue;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgb(125, 37, 133);
+    color: white;
     font-size: 30px;
 }
 .hea{
@@ -40,14 +47,15 @@ header ul ol{
 }
 .div1{
     width: 100%;
-    background-color: red;
+    background-color: rgb(134, 134, 134);
+    border: 1px solid rgb(16, 63, 216);
     border-radius: 20px;
     padding: 10px;
 }
 .div2{
     margin-top: 30px;
     width: 100%;
-    background-color: red;
+    background-color: rgb(134, 134, 134);
     padding: 10px;
 }
 .otzivi{
@@ -55,7 +63,7 @@ header ul ol{
 }
 .otziv{
     display: inline-block;
-    background-color: royalblue;
+    background-color: rgb(10, 169, 190);
     margin: 5px;
     width: 300px;
     height: 100px;
@@ -63,11 +71,13 @@ header ul ol{
 .div3{
     margin-top: 30px;
     width: 100%;
-    background-color: red;
+    background-color: rgb(134, 134, 134);
     padding: 10px;
 }
 .button1{
-    background-color: rgb(34, 30, 30);
+    background-color: rgb(13, 247, 255);
+    border: 2px solid red;
+    border-radius: 10px;
     float: left;
     padding: 4px;
     margin: 20px 0px 20px 0px;
@@ -83,11 +93,20 @@ footer ul{
 footer ul li{
     font-size: 20px;
     display: inline;
-    background-color: red;
-    padding: 5px;
+    background-color: rgb(21, 255, 0);
+    border-radius: 8px;
+    border: 1px solid black;
+    padding: 8px;
+    margin: 0px 5px 0px 5px;
 }
 footer h2{
     text-align: right;
     padding: 0px;
     margin: 0px;
+}
+.line{
+    background: red;
+    width: 100%;
+    height: 4px;
+    float: left;
 }
