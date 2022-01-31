@@ -1,0 +1,125 @@
+body{
+background-image: url(image/never.jpg);
+ 
+}
+.div{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	 justify-content: center;
+	 
+}
+.header {
+	color: green;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	 justify-content: center;
+    height: 84px;
+    width: 100%;
+    background: red;
+}
+.footer{
+	justify-content: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: green;
+	clear: both;
+    height: 84px;
+    width: 100%;
+    background: red;
+}
+.inner{
+	flex-direction: column;
+	align-items: center;
+	display: flex;
+	justify-content:center;
+	color: red;
+	height:700px ;
+	width:500px;
+	position: relative;
+	margin:0 auto;
+}
+.logout{
+    color: #b7625c;
+}
+.title{
+    padding: 40px 0px 5px 0px;
+}
+.zav{
+    margin-top: 20px;
+    text-align: center;
+    background-color: grey;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10px;
+}
+.zav p{
+    margin: 10px 0;
+}
+.buta{
+    text-align: center;
+}
+.butb:hover{
+    color: red;
+    transition: 0.2s ease-out;
+}
+.msg{
+    border: 2px solid #ffa908;
+    border-radius: 3px;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+a{
+    color: purple;
+    font-weight: bold;
+    text-decoration: none;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+.input{
+    margin: 10px 0;
+    padding: 10px;
+    border: unset;
+    border-bottom: 2px solid #e3e3e3;
+    outline: none;
+}
+.button{
+    padding: 10px;
+    background: #e3e3e3;
+    border: unset;
+    cursor: pointer;
+}
+.rainbow {
+  background: linear-gradient(to right, red, orange, yellow, green, cyan, blue, violet);
+background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 40px;
+  line-height: 40px;
+}
+.rainbow-animated {
+  background: linear-gradient(to right, red, orange, yellow, green, cyan, blue, violet);
+  background-size: 400% 400%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: rainbow 20s ease infinite;
+  animation: rainbow 20s ease infinite;
+  font-size: 25px;
+  line-height: 25px;
+}
+ 
+@-webkit-keyframes rainbow {
+  0% { background-position: 0% 50% };
+  50% { background-position: 100% 50% };
+  100% { background-position: 0% 50% };
+}
+ 
+@keyframes rainbow {
+  0% { background-position: 0% 50% };
+  50% { background-position: 100% 50% };
+  100% { background-position: 0% 50% };
+}

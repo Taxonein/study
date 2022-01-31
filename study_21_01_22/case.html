@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="script/script.js">
+    <link rel="stylesheet" href="style/style.css">
+    <link href="addons/aos/aos.css" rel="stylesheet">
+    <script src="addons/aos/aos.js"></script>
+    <script src="addons/jquery/jquery-3.6.0.min.js"></script>
+    <script src="script/script.js"></script>
+</head>
+<body>
+    <header>
+        <div><a href="index.html">ГЛАВНАЯ</a></div>
+        <div><a href="case.html">ЗАЯВКИ</a></div>
+        <div><a href="cabinet.html">ЛК</a></div>
+    </header>
+    <div class="container">
+        <div class="rout">
+            <span>НОВАЯ ЗАЯВКА</span>
+            <form>
+                <input type="text" placeholder="Кличка питомца">
+                <input type="text" placeholder="Описание работ">
+                <label for="worksel"></label>
+                <select name="work" class="worksel">
+                    <option value="1">Стрижка</option>
+                    <option value="2">Маникюр</option>
+                </select>
+                <input type="file" value="Фото помещения">
+                <input type="submit" value="ОТПРАВИТЬ ЗАЯВКУ">
+            </form>
+        </div>
+    </div>
+    <footer></footer>
+</body>
+</html>
