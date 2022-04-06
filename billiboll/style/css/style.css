@@ -1,0 +1,142 @@
+body{
+    margin: 0px;
+    background-color: antiquewhite;
+    font-family: sans-serif;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding: 0px 40px 0px 40px
+}
+#logodiv{
+
+}
+#navdiv ul li{
+    display: flex;
+    display: inline;
+    margin: 0px 10px 0px 10px;
+}
+#cartdiv ul li{
+    display: flex;
+    display: inline;
+    margin: 0px 10px 0px 10px;
+}
+#main{
+    margin-top: 20px;
+    padding: 0px;
+}
+#main div{
+    display: flex;
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    width: 12.5%;
+    height: 160px;
+    background-color: #cecec0;
+}
+#main1{
+    border-radius: 0px 100% 0px 0px;
+
+}
+#main2{
+    border-radius: 100% 0px 0px 0px;
+}
+#mainboth{
+    width: 100%;
+    height: 500px;
+    background-color: #cecec0;
+    clear: both;
+    text-align: center;
+    font-family: sans-serif;
+    padding-top: 20px;
+}
+#mainimg1{
+    position: absolute;
+    left: 0px;
+    top: 390px;
+}
+#mainimg2{
+    position: absolute;
+    right: 0px;
+    top: 190px;
+}
+#mainsp1{
+    color: rgb(0, 43, 99);
+    font-size: 70px;
+    font-weight: 900;
+}
+#mainsp2{
+    color: rgb(0, 110, 255);
+    font-size: 70px;
+    font-weight: 900;
+}
+#mainsp3{
+    font-size: 20px;
+    font-weight: 200;
+}
+#mainbtn{
+    margin: 40px auto;
+    width: 180px;
+    padding: 15px;
+    background-color: rgb(255, 72, 0);
+    color: white;
+    border-radius: 20px;
+}
+#container{
+    background-color: white;
+}
+#info{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+#infodiv{
+    margin: 40px;
+    width: 40%;
+    padding: 40px;
+    font-family: sans-serif;
+}
+#infospan1{
+    font-size: 65px;
+    font-weight: 800;
+}
+#infospan2{
+    font-size: 40px;
+}
+#infoimg{
+    width: 100%;
+}
+#infocat{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+#infocat div{
+    width: 420px;
+    height: 420px;
+    padding: 20px;
+    border-radius: 50px;
+    margin: 40px;
+}
+#infocat img{
+    height: 280px;
+    display: block;
+    margin: 0px auto;
+}
+#infocatin1{
+    font-size: 40px;
+    font-weight: 600;
+}
+#infocatin2{
+    font-size: 20px;
+}
+#inf1{
+    background-color: rgb(188, 162, 212);
+}
+#inf2{
+    background-color: rgb(162, 209, 212);
+}
+#inf3{
+    background-color: rgb(211, 212, 162);
+}

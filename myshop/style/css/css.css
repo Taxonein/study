@@ -1,0 +1,26 @@
+body{
+    margin: 0;
+    background-color: #808080;
+}
+header{
+    height: 60px;
+    background-color: red;
+}
+#container{
+    height: 500px;
+}
+#nav-second{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    line-height: 60px;
+}
+#nav-second li{
+    margin: 0px 10px 0px 10px;
+}
+footer{
+    height: 60px;
+    background-color: red;
+}
