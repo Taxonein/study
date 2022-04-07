@@ -1,0 +1,46 @@
+body{
+    margin: 0;
+    background-color: rgb(56, 56, 56);
+}
+header{
+    height: 60px;
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+}
+footer{
+    
+    height: 60px;
+    background-color: grey;
+}
+#container{
+    height: 100px;
+}
+#headerul{
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+#headerul li{
+    line-height: 60px;
+    margin: 0 10px 0 10px;
+}
+#headerul a{
+    text-decoration: none;
+    color: black;
+}
+#formdiv{
+    display: flex;
+    background-color: red;
+    width: 350px;
+    height: 200px;
+}
+#formdiv form{
+    padding: 10px;
+    margin-top: 10px;
+
+}
+#formdiv form input{
+    margin-top: 20px;
+}
