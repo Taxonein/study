@@ -140,3 +140,86 @@ header{
 #inf3{
     background-color: rgb(211, 212, 162);
 }
+#bibg{
+    width: 100%;
+}
+#bibgtext{
+    text-align: center;
+    padding: 200px 0px 80px 0px;
+    border-radius: 100px 100px 100px 100px;
+    width: 100%;
+    background-color: rgb(231, 231, 231);
+
+}
+#bibtext1{
+    color: rgb(0, 43, 99);
+    font-size: 70px;
+    font-weight: 900;
+}
+#bibtext2{
+    font-size: 20px;
+    font-weight: 200;
+}
+#bibgdivs{
+    display: flex;
+    justify-content: space-around;
+    margin: 80px 0px 80px 0px;
+    font-size: 30px;
+    font-weight: 700;
+}
+#bibgdivs div{
+    width: 380px;
+    height: 280px;
+    margin: 0px 10px 0px 10px;
+}
+#bibgdivs div img{
+    width: 380px;
+    height: 280px;
+}
+#leftup{
+    position: relative;
+    left: -100px;
+    top: -250px;
+}
+#center{
+    position: relative;
+    top: -187.5px;
+    left: -10px;
+    padding: 0px;
+}
+#leftdown{
+    position: relative;
+    text-align: left;
+    left: 50px;
+    top: -120px;
+}
+#lovecat{
+    display: flex;
+}
+#bruh{
+    width: 50%;
+    height: 600px;
+}
+#lc1{
+    color: rgb(0, 43, 99);
+    font-size: 60px;
+    font-weight: 900;
+    margin: auto 0;
+}
+#test{
+    width: 100%;
+    background-color: red;
+    height: 200px;
+}
+#test1{
+    width: 50%;
+    background-color: blue;
+    height: 200px;
+    float: left;
+}
+#test2{
+    width: 50%;
+    background-color: red;
+    height: 200px;
+    float: right;
+}
