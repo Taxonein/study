@@ -1,0 +1,29 @@
+        // $number = 5;
+        // $govno = 6;
+        // $users = array("Vitaly" => 17, "Omega" => 20, "Gena" => 22);
+        // // foreach($users as $item => $value){
+        // //     echo "Key: $item. Value: $value. <br>";
+        // // }
+        $c = 0;
+        function summa($a,$b){
+            global $c;
+            $c++;
+            return $a + $b;
+        }
+        echo (summa(10, 5));
+        echo (summa(10, 5));
+        echo ($c);
+
+        // echo "Вывод: " . $number . $govno;
+
+        <form action="test.php" method="post">
+            <input type="text" name="name" required>
+            <input type="email" name="mail" required>
+            <input type="password" name="pass" required>
+            <input type="submit" value="ENTER">
+        </form>
+
+
+        // date_default_timezone_set('UTC');
+        // echo (date('d m'));
+        

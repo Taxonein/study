@@ -19,7 +19,12 @@
         <div class="navmenu">MENU</div>
     </header>
     <div class="container">
-
+        <form action="test.php" method="POST">
+        <input type="text" name="name" required>
+        <input type="email" name="mail" required>
+        <input type="password" name="pass" required>
+        <input type="submit" value="ENTER">
+        </form>
     </div>
     <footer>
     </footer>
