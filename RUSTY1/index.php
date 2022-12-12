@@ -25,6 +25,10 @@
         <input type="password" name="pass" required>
         <input type="submit" value="ENTER">
         </form>
+        <form action="add.php" method="POST">
+        <input type="text" name="task" required>
+        <input type="submit" value="ENTER">
+        </form>
     </div>
     <footer>
     </footer>
