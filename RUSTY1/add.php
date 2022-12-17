@@ -13,7 +13,9 @@ if($task == ''){
 $dsn = "mysql:host=$HOST;dbname=$DB;charset=$CHARSET";
 $pdo = new PDO($dsn, $USER, $PASS);
 $sql = 'INSERT INTO tasks(task) VALUES(:task)';
-$query = $pdo->prepare($sql);
-$query->execute(['task' => $task]);
+// $query = $pdo->prepare($sql);
+// $query->execute(['task' => $task]);
+$exits = 'SELECT * FROM tasks';
+echo($exits);
 
 header('Location: /');
