@@ -9,6 +9,7 @@ header{
     display: flex;
     justify-content: space-between;
 }
+
 .navlogo, .navlogo img{
     width: 200px;
     height: 80px;
@@ -17,6 +18,14 @@ header{
 .navcat{
     display: flex;
     height: 80px;
+    justify-self: center;
+    align-self: center;
+}
+.navmenu{
+    display: flex;
+    justify-self: right;
+    justify-content: right;
+    justify-items: right;
 }
 .navcat div{
     background-color: aqua;
