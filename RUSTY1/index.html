@@ -9,16 +9,27 @@
 </head>
 <body>
     <header>
-        <div class="navlogo"><img src="media/logo.png"></div>
-        <div class="navcat">
-            <div class="">ГЛАВНАЯ</div>
-            <div class="">О НАС</div>
-            <div class="">КАТАЛОГ</div>
-            <div class="">КОНТАКТЫ</div>
+        <div class="navbar">
+            <div class="navlogo">
+                <div class="logodiv"><img src="media/logo.png"></div>
+            </div>
+            <div class="navbuttons">
+                <div class="">HOME</div>
+                <div class="">ABOUT</div>
+                <div class="">NEWS</div>
+                <div class="">CONTACTS</div>
+                <div class="">SITEMAP</div>
+            </div>
         </div>
-        <div class="navmenu">MENU</div>
+        <div class="navbarmenu">
+            <div class="country">
+                <img src="media/ru.png">
+                <img src="media/gb.png">
+            </div>
+            <div class="">info@consensus-group.ru<BR>+7 (496) 203-5911</div>
+        </div>
     </header>
-    <div class="container">
+    <!-- <div class="container">
         <form action="register.php" method="POST">
         <input type="text" name="login" required>
         <input type="email" name="mail" required>
@@ -35,8 +46,10 @@
         <?php else: ?>
             <p>Привет,<?php $_COOKIE['user']; ?>. Чтобы выйти нажми <a href="logout.php">сюда</a></p>
         <?php endif; ?>
-    </div>
+    </div> -->
     <footer>
     </footer>
 </body>
+<script type="text/javascript" src="js/jquery-3.6.2.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
 </html>

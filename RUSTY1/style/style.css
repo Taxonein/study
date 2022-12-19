@@ -5,19 +5,60 @@ body{
 }
 /*Header begin*/
 header{
-    background-color: red;
+    background-color: rgb(0, 0, 0);
     display: flex;
+    height: 60px;
     justify-content: space-between;
+    color: white;
 }
-
-.navlogo, .navlogo img{
-    width: 200px;
-    height: 80px;
+.navbar{
+    display: flex;
+}
+.logodiv, .logodiv img{
+    width: 160px;
+    height: 60px;
+}
+.navbuttons{
+    display: flex;
+    justify-self: center;
+    align-self: center;
+}
+.navbuttons div{
+    padding: 0 5px 0 5px;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    height: 60px;
+}
+.navbarmenu{
+    height: 60px;
+    display: flex;
+    align-self: center;
+    align-items: center;
+}
+.navbarmenu{
+    display: flex;
+    justify-content: space-around;
+}
+.country{
+    display: flex;
+    flex-direction: column;
+}
+.country img{
+    width: 40px;
+    margin: 2px 5px 2px 0px;
+}
+/* .navlogo, .navlogo img{
+    width: 160px;
+    height: 60px;
     margin-left: 5px;
 }
-.navcat{
+.navbar1{
     display: flex;
-    height: 80px;
+} */
+/* .navcat{
+    display: flex;
+    height: 60px;
     justify-self: center;
     align-self: center;
 }
@@ -35,4 +76,4 @@ header{
     align-items: center;
     padding: 0 10px 0 10px;
     margin: 0 10px 0 10px;
-}
+} */
