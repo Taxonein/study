@@ -40,5 +40,6 @@ var_dump($nameguy);
 	}
   echo "$nameguy";
 	?>
+  123
 </body>
 </html>
