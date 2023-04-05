@@ -1,0 +1,63 @@
+
+/*Меню*/
+
+#sidebar{
+	position:absolute;
+	width:250px;
+	height:100%;
+	background:#57626f;
+	border-right:4px solid #green;
+	left:-250px;
+}
+
+/*Активация js*/
+
+#sidebar.active{
+		left:0px;
+}
+
+/*Стили*/
+#sidebar ul li:first-child{
+	text-align:center;
+	color:white;
+	font-size:1.95em;
+	list-style:none;
+	padding:25px 10px 10px 10px;
+}
+
+#sidebar ul li:not(:first-child){
+	width:90%;
+	margin-left:10%;
+	font-size:1.1em;
+	list-style:none;
+	padding:25px 10px;
+}
+/*href*/
+#sidebar ul li a{
+	color:#dfe5eb;
+	text-decoration:none;
+}
+/*активация нажатия*/
+#sidebar ul li a:hover{color:#59e9df;}
+
+/*кнопки*/
+#sidebar .toggle-btn{
+	position:absolute;
+	left:270px;
+	top:20px;
+	background:#f1f1f1;
+	padding:10px;
+	border-radius:12px;
+	Cursor:pointer;
+}
+
+#sidebar .toggle-btn:hover{background:#556270}
+#sidebar .toggle-btn:hover span{background:#fafafa}
+
+#sidebar .toggle-btn span{
+	display:block;
+	width:25px;
+	height:4px;
+	background-color:#666;
+	margin:4px 0;
+}
