@@ -1,7 +1,7 @@
 <?php
 
 $host = 'localhost';
-$db = 'catalog';
+$db = 'diplom';
 $user = 'root';
 $pass = '';
 $charset = 'utf8';

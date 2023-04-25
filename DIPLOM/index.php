@@ -1,3 +1,13 @@
+<?php
+require_once __DIR__ . '../connect.php';
+function get_catalog(): array
+{
+    global $pdo;
+    $res = $pdo->query("SELECT * FROM `catalog` ORDER BY id DESC LIMIT 0,6;");
+    return $res->fetchAll();
+}
+$catalog = get_catalog();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +23,7 @@
             <img src="img/logo.png">
         </div>
         <div class="buttons">
-            <div>Главная</div>
+            <div><a href="index.php">Главная</a></div>
             <div>О нас</div>
             <div>Контакты</div>
             <div class="catalogDiv"><a class="aDisable">Каталог</a></div>
@@ -28,7 +38,7 @@
     <div class="menuDiv"></div>
     <div class="catalog">
         <div>
-            <div>Самокаты</div>
+            <div><a href="scooters.php">Самокаты</a></div>
             <div>Велосипеды</div>
             <div>Скутеры</div>
             <div>Ролики</div>
@@ -61,46 +71,18 @@
             </span>
         </div>
         <div class="items">
-            <div class="item">
-                <div class="itemImg"><img src="img/logo.png"></div>
-                <div class="itemPrice"><span>20000Р</span><span>18000Р</span></div>
-                <div class="itemName"><span>Мое Название  Мое Название  Мое Название  Мое Название  Мое Название  Мое Название  Мое Название </span></div>
-            </div>
-            <div class="item">
-                <div class="itemImg"><img src="img/logo.png"></div>
-                <div class="itemPrice"><span>20000Р</span><span>18000Р</span></div>
-                <div class="itemName"><span>Мое Название  Мое Название  Мое Название  Мое Название  Мое Название  Мое Название  Мое Название </span></div>
-            </div>
-            <div class="item">
-                <div class="itemImg"><img src="img/logo.png"></div>
-                <div class="itemPrice"><span>20000Р</span><span>18000Р</span></div>
-                <div class="itemName"><span>Мое Название  Мое Название  Мое Название  Мое Название  Мое Название  Мое Название  Мое Название </span></div>
-            </div>
-            <div class="item">
-                <div class="itemImg"><img src="img/logo.png"></div>
-                <div class="itemPrice"><span>20000Р</span><span>18000Р</span></div>
-                <div class="itemName"><span>Мое Название  Мое Название  Мое Название  Мое Название  Мое Название  Мое Название  Мое Название </span></div>
-            </div>
-            <div class="item">
-                <div class="itemImg"><img src="img/logo.png"></div>
-                <div class="itemPrice"><span>20000Р</span><span>18000Р</span></div>
-                <div class="itemName"><span>Мое Название  Мое Название  Мое Название  Мое Название  Мое Название  Мое Название  Мое Название </span></div>
-            </div>
-            <div class="item">
-                <div class="itemImg"><img src="img/logo.png"></div>
-                <div class="itemPrice"><span>20000Р</span><span>18000Р</span></div>
-                <div class="itemName"><span>Мое Название  Мое Название  Мое Название  Мое Название  Мое Название  Мое Название  Мое Название </span></div>
-            </div>
-            <div class="item">
-                <div class="itemImg"><img src="img/logo.png"></div>
-                <div class="itemPrice"><span>20000Р</span><span>18000Р</span></div>
-                <div class="itemName"><span>Мое Название  Мое Название  Мое Название  Мое Название  Мое Название  Мое Название  Мое Название </span></div>
-            </div>
-            <div class="item">
-                <div class="itemImg"><img src="img/logo.png"></div>
-                <div class="itemPrice"><span>20000Р</span><span>18000Р</span></div>
-                <div class="itemName"><span>Мое Название  Мое Название  Мое Название  Мое Название  Мое Название  Мое Название  Мое Название </span></div>
-            </div>
+        <?php if (!empty($catalog)): ?>
+            <?php foreach ($catalog as $item): ?>
+                <div class="item">
+                    <a href="itempage.php?id=<?php echo $item['id'];?>">
+                    <div class="itemImg"><img src="img/logo.png"></div>
+                    <div class="itemPrice"><span>20000Р</span><?php if ($item['price_before'] >= 1):?><span><div class="priceBeforeLine"></div><?=$item['price_before']?>Р</span><?php endif;?></div>
+                    <div class="itemName"><span><?= $item['name']?></span></div>
+                    </a>
+                <!-- <div class="buyButton"><span><a href="itempage.php">КУПИТЬ</a></span></div> -->
+                </div>
+            <?php endforeach; ?>
+        <?php endif; ?>
         </div>
         <div class="textBlock">
             <span>
