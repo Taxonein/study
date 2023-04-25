@@ -7,7 +7,29 @@
         padding: 0 277px 0 277px;
     }
 }
-@media (min-width: 1366px){
+@media (max-width: 970px){
+    .buttons{
+        display: none;
+    }
+    .buttons div{
+        display: none;
+    }
+    .menu{
+        display: none;
+    }
+    .menuwrap{
+        display: block;
+    }
+}
+@media (min-width: 971px){
+    .menuwrap{
+        display: none;
+    }
+}
+@media (max-width: 560px){
+    .news img{
+        width: 100% !important;
+    }
 }
 body{
     margin: 0px;
@@ -34,10 +56,29 @@ body{
 .menu{
     height: 40px;
 }
+.menuwrap img{
+    width: 40px;
+    height: 40px;
+}
 .menu img{
     width: 40px;
     height: 40px;
     padding-left: 15px;
+}
+.menuwrap{
+    width: 40px;
+    height: 40px;
+}
+.menuDiv{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    display: flex;
+    position: absolute;
+    right: 0;
+    display: none;
+    opacity: 1;
+    transition: 0.6s ease;
 }
 header{
     height: 40px;
@@ -46,11 +87,24 @@ header{
     display: flex;
     justify-content: space-between;
 }
+.aDisable{
+    color: black;
+    text-decoration: none;
+}
 .catalog{
+    display: none;
+    opacity: 1;
+    transition: 0.6s ease;
     position: absolute;
+    top: 0px;
     width: 100%;
-    height: 100px;
     background-color: aqua;
+    justify-content: space-around;
+}
+.catalog div div{
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
 }
 .container{
     margin-top: 20px;
@@ -164,4 +218,18 @@ footer div:nth-child(1){
 .itemName span{
     font-weight:bold;
     width: 200px;
+}
+.categoryDivs{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.categoryDivs div img{
+    width: 260px;
+    height: 260px;
+}
+.categoryDivs div{
+    margin: 4px 4px 4px 4px;
+}
+.categoryDivs{
 }
