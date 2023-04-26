@@ -1,12 +1,9 @@
+
 <?php
+session_start();
 require_once __DIR__ . '../connect.php';
-function get_catalog(): array
-{
-    global $pdo;
-    $res = $pdo->query("SELECT * FROM `catalog` WHERE category = 1 ORDER BY id DESC LIMIT 0,6;");
-    return $res->fetchAll();
-}
-$catalog = get_catalog();
+$catalog = $_SESSION['cart_items'];
+print_r($_SESSION['cart_items'])
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +28,7 @@ $catalog = get_catalog();
         </div>
         <div class="menu">
             <img src="img/cart.png">
-            <img src="img/user.png">
+            <a href="login.php"><img src="img/user.png"></a>
         </div>
         <div class="menuwrap"><img src="img/menu.png"></div>
     </header>
@@ -53,7 +50,6 @@ $catalog = get_catalog();
         </div>
     </div>
     <div class="container">
-        <div class="textBlock"><span>Самокаты:</span></div>
         <div class="items">
         <?php if (!empty($catalog)): ?>
             <?php foreach ($catalog as $item): ?>

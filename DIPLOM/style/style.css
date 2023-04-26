@@ -300,6 +300,7 @@ footer div:nth-child(1){
     transform: rotate(5deg);
 }
 .itemPageInfo{
+    margin-top: 20px;
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -311,5 +312,82 @@ footer div:nth-child(1){
 }
 .addToCart{
     display: flex;
-    
+    align-self: center;
+    font-weight: 900;
+    padding: 8px;
+    background-color: rgb(16, 196, 76);
+    color: white;
+    border-radius: 15px;
+}
+.addToCart span{
+    font-size: 23px;
+}
+.userForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+.userForm form{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+.userForm label{
+    margin-top: 10px;
+}
+.userForm input{
+    font-size: 20px;
+    height: 30px;
+    border: unset;
+    border-bottom: 2px solid grey;
+    outline: none;
+}
+.userForm span{
+    margin-top: 20px;
+    text-align: center;
+}
+.userForm button{
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-top: 20px;
+    height: 40px;
+    width: 70%;
+}
+.formMsg{
+    padding: 5px;
+    border: 4px solid rgb(221, 221, 110);
+    font-weight: bold !important;
+    font-size: 26px !important;
+}
+.userGUI{
+    display: flex;
+}
+.userphoto{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+.userphoto img{
+    width: 400px;
+    height: 500px;
+}
+.userInfo{
+    font-size: 25px;
+    margin-left: 50px;
+}
+.userInfo div{
+    margin-top: 20px;
+}
+.userInfoExit{
+    padding: 5px;
+    background-color: antiquewhite;
+    text-align: center;
+}
+.userInfoExit a{
+    color: rgb(156, 74, 49) !important;
 }

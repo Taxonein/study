@@ -30,8 +30,8 @@ $catalog = get_catalog();
             <div>Акции</div>
         </div>
         <div class="menu">
-            <img src="img/cart.png">
-            <img src="img/user.png">
+            <a href="cart.php"><img src="img/cart.png"></a>
+            <a href="login.php"><img src="img/user.png"></a>
         </div>
         <div class="menuwrap"><img src="img/menu.png"></div>
     </header>
@@ -76,19 +76,14 @@ $catalog = get_catalog();
                 <div class="item">
                     <a href="itempage.php?id=<?php echo $item['id'];?>">
                     <div class="itemImg"><img src="img/logo.png"></div>
-                    <div class="itemPrice"><span>20000Р</span><?php if ($item['price_before'] >= 1):?><span><div class="priceBeforeLine"></div><?=$item['price_before']?>Р</span><?php endif;?></div>
+                    <div class="itemPrice"><span><?= $item['price']?>Р</span><?php if ($item['price_before'] >= 1):?><span><div class="priceBeforeLine"></div><?=$item['price_before']?>Р</span><?php endif;?></div>
                     <div class="itemName"><span><?= $item['name']?></span></div>
                     </a>
-                <!-- <div class="buyButton"><span><a href="itempage.php">КУПИТЬ</a></span></div> -->
                 </div>
             <?php endforeach; ?>
         <?php endif; ?>
         </div>
-        <div class="textBlock">
-            <span>
-                Смотрите в категориях:
-            </span>
-        </div>
+        <div class="textBlock"><span>Смотрите в категориях:</span></div>
         <div class="categoryDivs">
             <div><img src="img/cart.png"></div>
             <div><img src="img/cart.png"></div>

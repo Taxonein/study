@@ -66,7 +66,7 @@ $catalog = get_catalog();
                     <div class="itemPageDesc"><span><?= $item['description']?></span></div>
                 </div>
                 <div class="itemPageInfo">
-                    <div class="itemPagePrice"><span>20000Р</span><?php if ($item['price_before'] >= 1):?><span><div class="priceBeforeLine"></div><?=$item['price_before']?>Р</span><?php endif;?></div><div class="addToCart">Добавить в корзину</div>
+                    <div class="itemPagePrice"><span><?= $item['price'] ?>Р</span><?php if ($item['price_before'] >= 1):?><span><div class="priceBeforeLine"></div><?=$item['price_before']?>Р</span><?php endif;?></div><a href="cart_add.php?id=<?php echo $item['id'];?>"><div class="addToCart"><span>Добавить в корзину</span></div></a>
                 </div>
             <?php endforeach; ?>
         <?php endif; ?>

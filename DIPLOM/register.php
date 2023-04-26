@@ -1,12 +1,9 @@
 <?php
-require_once __DIR__ . '../connect.php';
-function get_catalog(): array
-{
-    global $pdo;
-    $res = $pdo->query("SELECT * FROM `catalog` WHERE category = 1 ORDER BY id DESC LIMIT 0,6;");
-    return $res->fetchAll();
+session_start();
+if ($_SESSION['user']){
+    header('Location: profile.php');
 }
-$catalog = get_catalog();
+require_once __DIR__ . '../connect.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +28,7 @@ $catalog = get_catalog();
         </div>
         <div class="menu">
             <img src="img/cart.png">
-            <img src="img/user.png">
+            <a href=""><img src="img/user.png"></a>
         </div>
         <div class="menuwrap"><img src="img/menu.png"></div>
     </header>
@@ -53,19 +50,28 @@ $catalog = get_catalog();
         </div>
     </div>
     <div class="container">
-        <div class="textBlock"><span>Самокаты:</span></div>
-        <div class="items">
-        <?php if (!empty($catalog)): ?>
-            <?php foreach ($catalog as $item): ?>
-                <div class="item">
-                    <a href="itempage.php?id=<?php echo $item['id'];?>">
-                    <div class="itemImg"><img src="img/logo.png"></div>
-                    <div class="itemPrice"><span><?= $item['price']?>Р</span><?php if ($item['price_before'] >= 1):?><span><div class="priceBeforeLine"></div><?=$item['price_before']?>Р</span><?php endif;?></div>
-                    <div class="itemName"><span><?= $item['name']?></span></div>
-                    </a>
-                </div>
-            <?php endforeach; ?>
-        <?php endif; ?>
+    <div class="textBlock"><span>Регистрация аккаунта</span></div>
+        <div class="userForm">
+            <form action="signup.php" method="POST">
+            <label>Ф.И.О:</label>
+            <input type="text" name="fullname" placeholder="Введите свое Ф.И.О"></input>
+            <label>Логин:</label>
+            <input type="text" name="login" placeholder="Введите свой логин"></input>
+            <label>Пароль:</label>
+            <input type="password" name="password" placeholder="Введите свой пароль"></input>
+            <label>Пароль:</label>
+            <input type="password" name="password_reply" placeholder="Подтведите свой пароль"></input>
+            <label>Почта:</label>
+            <input type="email" name="email" placeholder="Введите свою почту"></input>
+            <button type="submit">ЗАРЕГИСТРИРОВАТЬСЯ</button>
+            <span>У вас уже есть аккаунт?<br> <a href="login.php">войдите</a></span>
+            </form>
+            <?php 
+            if ($_SESSION['message']){
+                echo '<span class="formMsg">'.$_SESSION['message'].'</span>';
+            }
+            unset($_SESSION['message'])
+            ?>
         </div>
     </div>
     <footer>
