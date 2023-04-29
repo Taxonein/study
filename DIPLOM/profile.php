@@ -77,8 +77,63 @@ require_once __DIR__ . '../connect.php';
                 </span>
                 </div>
                 <div class="userInfoExit"><span><a href="logout.php">Выйти из аккаунта</a></span></div>
-                <div><span>История покупок: <?= $_SESSION['user']['purchases']?></span></div>
             </div>
+            <div class="PurchaseHistoryNav">
+                    <div class="PurchaseHistory">
+                    <div class="profileTextBlock"><span>Необработанные заказы</span></div>
+                        <?php
+                        $usercartquery = $pdo->query("SELECT * FROM `orders` WHERE user_id = '".$_SESSION['user']['id']."' AND status = 1 ORDER BY id DESC");
+                        $usercart = $usercartquery->fetchAll();
+                        ?>
+                        <?php foreach ($usercart as $order): ?>
+                        <?php
+                        $statuslistquery = $pdo->query("SELECT `name` FROM `status_list` WHERE id = '".$order['status']."'");
+                        $statuslist = $statuslistquery->fetch();
+                        ?>
+                            <div class="orderInProcessHeader"><span>Номер заказа: <?=$order['id']?> Статус:<?=$statuslist['name']?></span><div class="forHeader"><span>Дата заказа: <?=$order['date']?></span><div><?php if($order['status'] < 2):?><a href="order_cancel.php?id=<?php echo $order['id'];?>"><img class="cancelOrder" src="img/minus.png"></a><?php endif;?></div></div></div>
+                        <?php
+                        $usercart = explode(';',$order['items']);
+                        $usercart = array_diff($usercart, array(''));
+                        ?>
+                        <?php foreach ($usercart as $item): ?>
+                            <?php
+                            $usercartexplode = explode('x',$item);
+                            $itemquery = $pdo->query("SELECT * FROM `catalog` WHERE id = '".$usercartexplode['0']."'");
+                            $itembase = $itemquery->fetch();
+                        ?>
+                        <div class="orderInProcess">
+                            <div class="orderInProcessBody"><span><?=$itembase['name']?></span><span>Кол-во: <?=$usercartexplode['1']?>шт</span></div>
+                        </div>
+                        <?php endforeach;?>
+                        <?php endforeach;?>
+                        <div class="profileTextBlock"><span>Завершенные заказы</span></div>
+                        <?php
+                        $usercartquery = $pdo->query("SELECT * FROM `orders` WHERE user_id = '".$_SESSION['user']['id']."' AND status != 1 ORDER BY id DESC");
+                        $usercart = $usercartquery->fetchAll();
+                        ?>
+                        <?php foreach ($usercart as $order): ?>
+                        <?php
+                        $statuslistquery = $pdo->query("SELECT `name` FROM `status_list` WHERE id = '".$order['status']."'");
+                        $statuslist = $statuslistquery->fetch();
+                        ?>
+                            <div class="orderInProcessHeader"><span>Номер заказа: <?=$order['id']?> Статус:<?=$statuslist['name']?></span><div class="forHeader"><span>Дата заказа: <?=$order['date']?></span><div><?php if($order['status'] < 2):?><a href="order_cancel.php?id=<?php echo $order['id'];?>"><img class="cancelOrder" src="img/minus.png"></a><?php endif;?></div></div></div>
+                        <?php
+                        $usercart = explode(';',$order['items']);
+                        $usercart = array_diff($usercart, array(''));
+                        ?>
+                        <?php foreach ($usercart as $item): ?>
+                            <?php
+                            $usercartexplode = explode('x',$item);
+                            $itemquery = $pdo->query("SELECT * FROM `catalog` WHERE id = '".$usercartexplode['0']."'");
+                            $itembase = $itemquery->fetch();
+                        ?>
+                        <div class="orderInProcess">
+                            <div class="orderInProcessBody"><span><?=$itembase['name']?></span><span>Кол-во: <?=$usercartexplode['1']?>шт</span></div>
+                        </div>
+                        <?php endforeach;?>
+                        <?php endforeach;?>
+                    </div>
+                </div>
         </div>
         <div class="textBlock"><span><a href="admin.php">Открыть панель администрирования</a></span></div>
     </div>

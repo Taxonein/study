@@ -391,3 +391,200 @@ footer div:nth-child(1){
 .userInfoExit a{
     color: rgb(156, 74, 49) !important;
 }
+.cartItems{
+}
+.cartItem{
+    margin-top: 20px;
+    width: 100%;
+    height: 200px;
+    background-color: rgb(158, 158, 158);
+    display: flex;
+}
+.cartItemImg{
+    height: 200px;
+    width: 350px;
+    display: flex;
+}
+.cartItemImg img{
+    height: 200px;
+    width: 350px;
+}
+.cartItemMain{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.cartTextBlock{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 40px;
+    background-color: rgb(211, 211, 211);
+}
+.cartTextBlockRight{
+    display: flex;
+}
+.deleteFromCart{
+    height: 40px;
+    width: 40px;
+}
+.deleteFromCart img{
+    width: 40px;
+    height: 40px;
+}
+.cartTextBlock span{
+    align-self: center;
+    font-size: 25px;
+}
+.cartItemDescription{
+}
+.cartItemDescription span{
+    font-size: 20px;
+}
+.cartItemManage{
+    display: flex;
+    align-self: flex-end;
+    position: absolute;
+    bottom: 0;
+    height: 40px;
+    background-color: rgb(110, 110, 110);
+}
+.CartItemQty{
+    display: flex;
+}
+.CartItemQty span{
+    align-self: center;
+    font-size: 25px;
+}
+.CartItemPrice{
+    display: flex;
+    margin-right: 10px;
+}
+.CartItemPrice span{
+    align-self: center;
+    font-size: 25px;
+}
+.CartItemPrice_before{
+    display: flex;
+    margin-right: 10px;
+}
+.prcbfr_1{
+    align-self: center;
+    font-size: 25px;
+}
+.prcbfr_2{
+    align-self: center;
+    position: relative;
+    font-size: 25px;
+}
+.prcbfr_2 div{
+    position: absolute;
+    top: 13px;
+    transform: rotate(10deg);
+    width: 100%;
+    height: 2px;
+    background-color: red;
+}
+.CartItemButtonMinus{
+    display: flex;
+    width: 40px;
+    height: 40px;
+}
+.CartItemButtonPlus{
+    display: flex;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+.cartTotal{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 40px;
+    background-color: rgb(211, 211, 211);
+}
+.cartTotalInfo{
+    display: flex;
+}
+.cartTotalInfo span:nth-child(1){
+    font-size: 25px;
+    align-self: center;
+    margin-right: 10px;
+}
+.cartTotalInfo span:nth-child(2){
+    font-size: 25px;
+    align-self: center;
+}
+.cartTotalOrder{
+    display: flex;
+    height: 40px;
+}
+.cartTotalOrder span{
+    align-self: center;
+    font-size: 25px;
+}
+.messageBlock{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 20px;
+}
+.messageBlock span{
+    align-self: center;
+    font-size: 25px;
+    background-color: rgb(241, 241, 161);
+    padding: 5px;
+    border: 1px solid black;
+}
+.PurchaseHistory{
+    width: 100%;
+    background-color: rgb(216, 216, 216);
+}
+.PurchaseHistoryNav{
+    width: 100%;
+}
+.profileTextBlock{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    background-color: rgb(211, 211, 211);
+}
+.profileTextBlock span{
+    align-self: center;
+    font-size: 25px;
+}
+.orderInProcessHeader{
+    width: 100%;
+    /* height: 40px; */
+    flex-wrap: wrap;
+    background-color: blue;
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+.orderInProcessBody{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.orderInProcessHeader span{
+    font-size: 25px;
+    align-self: center;
+}
+.orderInProcessBody{
+    display: flex;
+}
+.orderInProcessBody span{
+    font-size: 20px;
+}
+.cancelOrder{
+    width: 40px;
+    height: 40px;
+}
+.forHeader{
+    height: 40px;
+    display: flex;
+}

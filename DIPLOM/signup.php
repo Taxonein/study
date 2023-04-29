@@ -22,12 +22,13 @@ $logincheck = $pdo->query("SELECT * FROM `users` WHERE `login` = '$login'");
 $logincheckdata = $logincheck->fetch();
 $mailcheck = $pdo->query("SELECT * FROM `users` WHERE `mail` = '$email'");
 $mailcheckdata = $mailcheck->fetch();
+$time = date('d.m.Y H:i:s');
 
 if (!$logincheckdata){
     if (!$mailcheckdata){
         if ($password === $password_reply){
         $password = md5($password);
-        $pdo->query("INSERT INTO `users` ( `login`, `fullname`, `mail`, `pass`)VALUES('$login', '$fullname', '$email', '$password') ");
+        $pdo->query("INSERT INTO `users` ( `login`, `fullname`, `mail`, `pass`,`register_date`)VALUES('$login', '$fullname', '$email', '$password', '$time') ");
         $_SESSION['message'] = 'Регистрация прошла успешно';
         header('Location: register.php');
     } else{

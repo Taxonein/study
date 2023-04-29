@@ -21,7 +21,8 @@ if ($usercheckdata){
         "login" => $usercheckdata['login'],
         "pass" => $usercheckdata['pass'],
         "status" => $usercheckdata['status'],
-        "register_date" => $usercheckdata['register_date']
+        "register_date" => $usercheckdata['register_date'],
+        "purchases" => $usercheckdata['purchases']
     ];
     header('Location: profile.php');
 }else{

@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once __DIR__ . '../connect.php';
 $id = $_GET['id'];
 function get_catalog(): array
@@ -35,7 +36,7 @@ $catalog = get_catalog();
             <div>Акции</div>
         </div>
         <div class="menu">
-            <img src="img/cart.png">
+            <a href="cart.php"><img src="img/cart.png"></a>
             <img src="img/user.png">
         </div>
         <div class="menuwrap"><img src="img/menu.png"></div>
