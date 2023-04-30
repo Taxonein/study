@@ -54,6 +54,7 @@ $catalog = $_SESSION['cart'];
     </div>
     <div class="container">
         <div class="cartItems">
+            <!-- СЕКЦИЯ ТОВАРОВ КОРЗИНЫ ДЛЯ ПК -->
             <?php if (!empty($catalog)): ?>
                 <?php foreach ($catalog as $item): ?>
                     <div class="cartItem">
@@ -78,6 +79,7 @@ $catalog = $_SESSION['cart'];
                     </div>
                 <?php endforeach; ?>
             <?php endif; ?>
+            <!-- СЕКЦИЯ ТОВАРОВ КОРЗИНЫ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ -->
         </div>
         <?php if (!$_SESSION['cart']){
             echo '<div class="textBlock"><span>Ваша корзина пуста :( Добавьте сюда что-нибудь!</span></div>';
