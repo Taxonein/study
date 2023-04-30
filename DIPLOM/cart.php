@@ -57,26 +57,28 @@ $catalog = $_SESSION['cart'];
             <!-- СЕКЦИЯ ТОВАРОВ КОРЗИНЫ ДЛЯ ПК -->
             <?php if (!empty($catalog)): ?>
                 <?php foreach ($catalog as $item): ?>
+                    <div class="cartItemHeadInfo">
+                        <div class="cartTextBlock">
+                            <span><?= $item['name'] ?></span>
+                            <div class="cartTextBlockRight">
+                            <?php if ($item['qty'] > 1): ?><a href="functions.php?minus=<?php echo $item['id'];?>"><div class="CartItemButtonMinus"><img src="img/minus.png"></div></a><?php endif; ?>
+                             <div class="CartItemQty"><span><?= $item['qty']?></span></div>
+                             <a href="functions.php?plus=<?php echo $item['id'];?>"><div class="CartItemButtonPlus"><img src="img/plus.png"></div></a>
+                            <a href="functions.php?id=<?php echo $item['id']; ?>"><div class="deleteFromCart"><img src="img/delete.png"></div></a>
+                            </div>
+                        </div>
+                    </div>
                     <div class="cartItem">
                         <a href="itempage.php?id=<?php echo $item['id']; ?>"><div class="cartItemImg"><img src="img/logo.png"></div></a>
                         <div class="cartItemMain">
-                            <div class="cartTextBlock">
-                                <span><?= $item['name'] ?></span>
-                                <div class="cartTextBlockRight">
-                                <?php if ($item['qty'] > 1): ?><a href="functions.php?minus=<?php echo $item['id'];?>"><div class="CartItemButtonMinus"><img src="img/minus.png"></div></a><?php endif; ?>
-                                <div class="CartItemQty"><span><?= $item['qty']?></span></div>
-                                <a href="functions.php?plus=<?php echo $item['id'];?>"><div class="CartItemButtonPlus"><img src="img/plus.png"></div></a>
-                                <a href="functions.php?id=<?php echo $item['id']; ?>"><div class="deleteFromCart"><img src="img/delete.png"></div></a>
-                                </div>
-                            </div>
                             <div class="cartItemDescription"><span><?= $item['description'] ?></span></div>
-                            <div class="cartItemManage">
+                        </div>
+                    </div>
+                    <div class="cartItemManage">
                                 <div class="CartItemPrice"><span>Цена:<?= $item['price']?></span></div>
                                 <?php if ($item['price_before']): ?><div class="CartItemPrice_before"><span class="prcbfr_1"></span><span class="prcbfr_2"><?= $item['price_before']?><div></div></span></div><?php endif; ?>
                                 <div class="CartItemPrice"><span>Общая стоимость:<?= $item['price'] * $item['qty']?>Р</span></div>
                             </div>
-                        </div>
-                    </div>
                 <?php endforeach; ?>
             <?php endif; ?>
             <!-- СЕКЦИЯ ТОВАРОВ КОРЗИНЫ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ -->
