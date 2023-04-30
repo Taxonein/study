@@ -52,12 +52,12 @@ require_once __DIR__ . '../connect.php';
     <div class="container">
     <div class="textBlock"><span>Вход в аккаунт</span></div>
         <div class="userForm">
-            <form action="signin.php" method="POST">
+            <form>
             <label>Логин:</label>
             <input type="text" name="login" placeholder="Введите свой логин"></input>
             <label>Пароль:</label>
             <input type="password" name="password" placeholder="Введите свой пароль"></input>
-            <button type="submit">ВОЙТИ</button>
+            <button type="submit" class="loginFormSubmit">ВОЙТИ</button>
             <span>У вас нет аккаунта?<br> <a href="register.php">Зарегистрируйтесь</a></span>
             </form>
             <?php 
@@ -77,6 +77,6 @@ require_once __DIR__ . '../connect.php';
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="js/js.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

@@ -31,13 +31,28 @@
         justify-content: center !important;
     }
 }
+@media (min-width: 561px){
+    .userphoto{
+        width: 50%;
+    }
+    .userphoto{
+        width: 400px !important;
+    }
+}
 @media (max-width: 560px){
     .news img{
         width: 100% !important;
     }
+    .userphoto{
+        width: 100%;
+    }
+    .userForm{
+        width: 100%;
+    }
 }
 a{
     text-decoration: none;
+    color: unset;
 }
 body{
     margin: 0px;
@@ -337,7 +352,7 @@ footer div:nth-child(1){
 .userForm form{
     display: flex;
     flex-direction: column;
-    width: 400px;
+    justify-content: center;
 }
 .userForm label{
     margin-top: 10px;
@@ -361,13 +376,14 @@ footer div:nth-child(1){
     font-size: 20px;
     margin-top: 20px;
     height: 40px;
-    width: 70%;
+    width: 100%;
 }
 .formMsg{
     padding: 5px;
     border: 4px solid rgb(221, 221, 110);
     font-weight: bold !important;
     font-size: 26px !important;
+    text-align: center;
 }
 .userGUI{
     display: flex;
@@ -376,12 +392,11 @@ footer div:nth-child(1){
     justify-content: space-between;
 }
 .userphoto{
-    width: 400px;
     display: flex;
     flex-direction: column;
 }
 .userphoto img{
-    width: 400px;
+    width: 100%;
     height: 500px;
 }
 .userInfo{
@@ -390,6 +405,10 @@ footer div:nth-child(1){
 }
 .userInfo div{
     margin-top: 20px;
+}
+.userinfo div span{
+    display: flex;
+    flex-wrap: wrap;
 }
 .userInfoExit{
     padding: 5px;

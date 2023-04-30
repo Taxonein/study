@@ -25,5 +25,16 @@ require_once __DIR__ . '../connect.php';
             <div><a href="admin/orders.php"><span>ЗАКАЗЫ</span></a><a href="admin/catalog.php"><span>КАТАЛОГ</span></a></div>
         </div>
     </header>
+    <div class="nameOfPanel"><span>Главная панель управления сайтом</span></div>
+    <div class="container_panel">
+        <div class="controlPanel">
+            <div>
+                <form class="controlPanelForm">
+                <div class="nameOfPanel"><span>Управление категориями</span></div>
+                    <label>Надо сосать</label>
+                </form>
+            <div>
+        <div>
+    </div>
 </body>
 </html>

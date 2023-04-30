@@ -17,6 +17,7 @@ if ($tocart['qty'] > $_SESSION['cart'][$tocart['id']]['qty'] && $tocart['qty'] !
         'description' => $tocart['description'],
         'price' => $tocart['price'],
         'price_before' => $tocart['price_before'],
+        'photo' => $tocart['photo'],
         'qty' => 1,
     ];
 }

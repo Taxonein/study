@@ -75,7 +75,7 @@ $catalog = get_catalog();
             <?php foreach ($catalog as $item): ?>
                 <div class="item">
                     <a href="itempage.php?id=<?php echo $item['id'];?>">
-                    <div class="itemImg"><img src="img/logo.png"></div>
+                    <div class="itemImg"><img src="<?=$item['photo']?>"></div>
                     <div class="itemPrice"><span><?= $item['price']?>Р</span><?php if ($item['price_before'] >= 1):?><span><div class="priceBeforeLine"></div><?=$item['price_before']?>Р</span><?php endif;?></div>
                     <div class="itemName"><span><?= $item['name']?></span></div>
                     </a>

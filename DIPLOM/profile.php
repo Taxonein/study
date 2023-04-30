@@ -51,16 +51,23 @@ require_once __DIR__ . '../connect.php';
     </div>
     <div class="container">
         <div class="textBlock"><span>Добро пожаловать в личный кабинет, <?= $_SESSION['user']['login']?></span></div>
+        <?php 
+            if ($_SESSION['message']){
+                echo '<span class="formMsg">'.$_SESSION['message'].'</span>';
+            }
+            unset($_SESSION['message'])
+        ?>
         <div class="userGUI">
             <div class="userphoto">
-                <img src="img/logo.png">
-                <form class="userForm" action="userchange.php" method="POST">
+                <?php if($_SESSION['user']['img']):?><img src="<?= $_SESSION['user']['img']?>"><?php else:?><img src="img/nothing.png"><?php endif;?>
+                <form class="userForm" action="userchange.php?id=<?= $_SESSION['user']['id']?>" method="POST" enctype='multipart/form-data'>
                     <label>Загрузить новое фото профиля:</label>
-                    <input name="userfile" type="file">
+                    <input name="userimg" type="file">
                     <button type="submit">ЗАГРУЗИТЬ</button>
                 </form>
             </div>
             <div class="userInfo">
+                <div><span>Ваш USER_ID: <?= $_SESSION['user']['id']?></span></div>
                 <div><span>Ваше Ф.И.О: <?= $_SESSION['user']['fullname']?></span></div>
                 <div><span>Ваша почта: <?= $_SESSION['user']['mail']?></span></div>
                 <div><span>Ваша дата регистрации: <?= $_SESSION['user']['date']?></span></div>
@@ -103,6 +110,7 @@ require_once __DIR__ . '../connect.php';
                         ?>
                         <div class="orderInProcess">
                             <div class="orderInProcessBody"><span><?=$itembase['name']?></span><span>Кол-во: <?=$usercartexplode['1']?>шт</span></div>
+                            <hr>
                         </div>
                         <?php endforeach;?>
                         <?php endforeach;?>
@@ -129,13 +137,14 @@ require_once __DIR__ . '../connect.php';
                         ?>
                         <div class="orderInProcess">
                             <div class="orderInProcessBody"><span><?=$itembase['name']?></span><span>Кол-во: <?=$usercartexplode['1']?>шт</span></div>
+                            <hr>
                         </div>
                         <?php endforeach;?>
                         <?php endforeach;?>
                     </div>
                 </div>
         </div>
-        <div class="textBlock"><span><a href="admin.php">Открыть панель администрирования</a></span></div>
+        <?php if($_SESSION['user']['status'] == 1):?><div class="textBlock"><span><a href="admin.php">Открыть панель администрирования</a></span></div><?php endif;?>
     </div>
     <footer>
         <div>

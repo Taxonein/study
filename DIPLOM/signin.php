@@ -22,7 +22,7 @@ if ($usercheckdata){
         "pass" => $usercheckdata['pass'],
         "status" => $usercheckdata['status'],
         "register_date" => $usercheckdata['register_date'],
-        "purchases" => $usercheckdata['purchases']
+        "img" => $usercheckdata['img']
     ];
     header('Location: profile.php');
 }else{

@@ -69,7 +69,7 @@ $catalog = $_SESSION['cart'];
                         </div>
                     </div>
                     <div class="cartItem">
-                        <a href="itempage.php?id=<?php echo $item['id']; ?>"><div class="cartItemImg"><img src="img/logo.png"></div></a>
+                        <a href="itempage.php?id=<?php echo $item['id']; ?>"><div class="cartItemImg"><img src="<?=$item['photo']?>"></div></a>
                         <div class="cartItemMain">
                             <div class="cartItemDescription"><span><?= $item['description'] ?></span></div>
                         </div>
@@ -81,7 +81,6 @@ $catalog = $_SESSION['cart'];
                             </div>
                 <?php endforeach; ?>
             <?php endif; ?>
-            <!-- СЕКЦИЯ ТОВАРОВ КОРЗИНЫ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ -->
         </div>
         <?php if (!$_SESSION['cart']){
             echo '<div class="textBlock"><span>Ваша корзина пуста :( Добавьте сюда что-нибудь!</span></div>';

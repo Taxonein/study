@@ -19,13 +19,13 @@ $id = $_GET['id'];
 <body>
     <header>
         <div>
-            <div><span>Панель администратора: <?=$_SESSION['user']['login']?></span><a href="../index.php"><span>НА САЙТ</span></a></div>
+            <div><span>Панель администратора: <?=$_SESSION['user']['login']?></span><a href="../index.php"><span>НА САЙТ</span></a><a href="../admin.php"><span>НА ГЛАВНУЮ ПАНЕЛИ</span></a></div>
         </div>
         <div>
             <div><a href="orders.php"><span>ЗАКАЗЫ</span></a><a href="catalog.php"><span>КАТАЛОГ</span></a></div>
         </div>
     </header>
-    <div class="ordersFilter"><a href="orders.php"><span>ВСЕ ЗАКАЗЫ</span><a href="orders.php?id=<?php echo ('1');?>"><span>НОВЫЕ</span></a><a href="orders.php?id=<?php echo ('2');?>"><span>ПОДТВЕРЖДЕННЫЕ</span></a><a href="orders.php?id=<?php echo ('3');?>"><span>ОТМЕНЕННЫЕ</span></a></div>
+    <div class="filter"><a href="orders.php"><span>ВСЕ ЗАКАЗЫ</span><a href="orders.php?id=<?php echo ('1');?>"><span>НОВЫЕ</span></a><a href="orders.php?id=<?php echo ('2');?>"><span>ПОДТВЕРЖДЕННЫЕ</span></a><a href="orders.php?id=<?php echo ('3');?>"><span>ОТМЕНЕННЫЕ</span></a></div>
     <div class="container">
         <?php
         if ($id){

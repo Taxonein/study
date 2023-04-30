@@ -38,12 +38,15 @@ header div div a span{
     display: flex;
     align-self: center;
 }
-.ordersFilter{
+.filter{
     display: flex;
     height: 40px;
     background-color: rgb(218, 218, 218);
 }
-.ordersFilter span{
+.filter a{
+    display: flex;
+}
+.filter span{
     margin-left: 20px;
     font-size: 25px;
     align-self: center;
@@ -82,4 +85,173 @@ header div div a span{
 }
 .orderItemRow span{
     font-size: 20px;
+}
+.catalogItems{
+    width: 100%;
+}
+.catalogItemInfo{
+    font-size: 25px;
+    display: flex;
+    height: 40px;
+    background-color: darkgray;
+    justify-content: space-between;
+}
+.catalogItemInfo div{
+    height: 40px;
+    display: flex;
+}
+.catalogItemInfo div a{
+    display: flex;
+}
+.catalogItemInfo div span{
+    align-self: center;
+}
+
+.catalogItemInfo div:nth-child(1) span{
+    margin-right: 10px;
+}
+.catalogItem{
+    width: 100%;
+    height: 200px;
+    background-color: bisque;
+    display: flex;
+    overflow: hidden;
+}
+.catalogItemImg{
+    width: 300px;
+    height: 200px;
+    display: flex;
+}
+.catalogItemImg img{
+    height: 200px;
+    width: 300px;
+}
+.catalogItemDescription{
+    display: flex;
+}
+.catalogItemDescription span{
+    font-size: 18px;
+}
+.catalogItemInfoEdit{
+    width: 100%;
+    font-size: 25px;
+    display: flex;
+    height: 40px;
+    background-color: darkgray;
+    justify-content: space-between;
+}
+.catalogItemInfoEdit div{
+    width: 100%;
+    display: flex;
+}
+.catalogItemInfoEdit div input{
+    font-size: 20px;
+    width: 100%;
+    height: 40px;
+    border: unset;
+    border-bottom: 2px solid grey;
+    outline: none;
+}
+.catalogItemInfoEdit span{
+    align-self: center;
+}
+.catalogItemDescriptionEdit{
+    display: flex;
+    margin-top: 10px;
+}
+.catalogItemDescriptionEdit div:nth-child(2){
+    width: 100%;
+}
+.catalogItemDescriptionEdit div:nth-child(2) textarea{
+    width: 100%;
+    height: 100%;
+    border: unset;
+    outline: none;
+    resize: none;
+    padding: 0;
+}
+.catalogItemDescriptionEdit div:nth-child(1) img{
+    width: 512px;
+    height: 512px;
+}
+.catalogItemBody{
+    display: flex;
+    width: 100%;
+    height: 40px;
+    justify-content: space-between;
+    background-color: darkgray;
+}
+.catalogItemBody div{
+    display: flex;
+}
+.catalogItemBody div span{
+    align-self: center;
+    font-size: 25px;
+}
+.catalogItemBody span{
+    margin: 0 5px 0 5px;
+}
+.catalogItemBody div div select{
+    font-size: 20px;
+    width: 200px;
+}
+.catalogItemBodyInputOne{
+    width: 100px;
+    font-size: 20px;
+    outline: none;
+    resize: none;
+    padding: 0;
+    margin: 0;
+}
+.catalogItemBodyInputTwo{
+    width: 40px;
+    height: 40px;
+    outline: none;
+    resize: none;
+    padding: 0;
+    margin: 0;
+}
+.catalogItemBodyInputThree{
+    width: 450px;
+    height: 40px;
+    font-size: 25px;
+    outline: none;
+    resize: none;
+    padding: 0;
+    margin: 0;
+}
+.catalogItemBodySubmit{
+    outline: none;
+    resize: none;
+    height: 40px;
+    width: 160px;
+    font-size: 20px;
+}
+.sessionMsgInfo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.sessionMsgInfo span{
+    padding: 10px;
+    border: 4px solid yellow;
+    font-size: 25px;
+}
+.controlPanel{
+    width: 100%;
+}
+.nameOfPanel{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: grey;
+}
+.nameOfPanel span{
+    font-size: 25px;
+    align-self: center;
+}
+.controlPanel{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
