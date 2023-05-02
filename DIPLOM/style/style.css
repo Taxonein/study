@@ -338,9 +338,13 @@ footer div:nth-child(1){
     background-color: rgb(16, 196, 76);
     color: white;
     border-radius: 15px;
-}
-.addToCart span{
     font-size: 23px;
+    border: unset;
+    outline: none;
+    cursor: pointer;
+}
+.addToCartDiv{
+
 }
 .userForm{
     display: flex;
@@ -384,6 +388,22 @@ footer div:nth-child(1){
     font-weight: bold !important;
     font-size: 26px !important;
     text-align: center;
+}
+.displayNone{
+    display: none;
+}
+.flexCenter{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.loadGif{
+    margin-top: 20px;
+    width: 50px;
+    height: 50px;
+}
+.importantToSee{
+    color: rgb(82, 82, 180);
 }
 .userGUI{
     display: flex;

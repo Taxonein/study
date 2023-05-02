@@ -1,9 +1,11 @@
 <?php
 session_start();
-if ($_SESSION['user']['status'] != 1){
-    header('Location: ../login.php');
-}
 require_once __DIR__ . '../../connect.php';
+$userinfoquery = $pdo->query("SELECT * FROM `users` WHERE id = '".$_SESSION['user']['id']."'");
+$userinfo = $userinfoquery->fetch();
+if ($userinfo['status'] != 1){
+    header('Location: ../user/profile.php');
+}
 $id = $_GET['id'];
 
 ?>

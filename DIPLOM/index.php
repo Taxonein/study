@@ -30,8 +30,8 @@ $catalog = get_catalog();
             <div>Акции</div>
         </div>
         <div class="menu">
-            <a href="cart.php"><img src="img/cart.png"></a>
-            <a href="login.php"><img src="img/user.png"></a>
+            <a href="user/cart.php"><img src="img/cart.png"></a>
+            <a href="user/login.php"><img src="img/user.png"></a>
         </div>
         <div class="menuwrap"><img src="img/menu.png"></div>
     </header>
@@ -74,7 +74,7 @@ $catalog = get_catalog();
         <?php if (!empty($catalog)): ?>
             <?php foreach ($catalog as $item): ?>
                 <div class="item">
-                    <a href="itempage.php?id=<?php echo $item['id'];?>">
+                    <a href="user/itempage.php?id=<?php echo $item['id'];?>">
                     <div class="itemImg"><img src="<?=$item['photo']?>"></div>
                     <div class="itemPrice"><span><?= $item['price']?>Р</span><?php if ($item['price_before'] >= 1):?><span><div class="priceBeforeLine"></div><?=$item['price_before']?>Р</span><?php endif;?></div>
                     <div class="itemName"><span><?= $item['name']?></span></div>

@@ -3,7 +3,9 @@ session_start();
 if (!$_SESSION['user']){
     header('Location: login.php');
 }
-require_once __DIR__ . '../connect.php';
+require_once __DIR__ . '../../connect.php';
+$userinfoquery = $pdo->query("SELECT * FROM `users` WHERE id = '".$_SESSION['user']['id']."'");
+$userinfo = $userinfoquery->fetch();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,26 +13,26 @@ require_once __DIR__ . '../connect.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/style.css" type="text/css">
+    <link rel="stylesheet" href="../style/style.css" type="text/css">
     <title>Skido4kin</title>
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="img/logo.png">
+            <img src="../img/logo.png">
         </div>
         <div class="buttons">
-            <div><a href="index.php">Главная</a></div>
+            <div><a href="../index.php">Главная</a></div>
             <div>О нас</div>
             <div>Контакты</div>
             <div class="catalogDiv"><a class="aDisable">Каталог</a></div>
             <div>Акции</div>
         </div>
         <div class="menu">
-            <img src="img/cart.png">
-            <a href="login.php"><img src="img/user.png"></a>
+            <img src="../img/cart.png">
+            <a href="login.php"><img src="../img/user.png"></a>
         </div>
-        <div class="menuwrap"><img src="img/menu.png"></div>
+        <div class="menuwrap"><img src="../img/menu.png"></div>
     </header>
     <div class="menuDiv"></div>
     <div class="catalog">
@@ -50,7 +52,7 @@ require_once __DIR__ . '../connect.php';
         </div>
     </div>
     <div class="container">
-        <div class="textBlock"><span>Добро пожаловать в личный кабинет, <?= $_SESSION['user']['login']?></span></div>
+        <div class="textBlock"><span>Добро пожаловать в личный кабинет, <?= $userinfo['login']?></span></div>
         <?php 
             if ($_SESSION['message']){
                 echo '<span class="formMsg">'.$_SESSION['message'].'</span>';
@@ -59,25 +61,25 @@ require_once __DIR__ . '../connect.php';
         ?>
         <div class="userGUI">
             <div class="userphoto">
-                <?php if($_SESSION['user']['img']):?><img src="<?= $_SESSION['user']['img']?>"><?php else:?><img src="img/nothing.png"><?php endif;?>
-                <form class="userForm" action="userchange.php?id=<?= $_SESSION['user']['id']?>" method="POST" enctype='multipart/form-data'>
+                <?php if($userinfo['img']):?><img src="../<?= $userinfo['img']?>"><?php else:?><img src="img/nothing.png"><?php endif;?>
+                <form class="userForm" action="userchange.php?id=<?= $userinfo['id']?>" method="POST" enctype='multipart/form-data'>
                     <label>Загрузить новое фото профиля:</label>
                     <input name="userimg" type="file">
                     <button type="submit">ЗАГРУЗИТЬ</button>
                 </form>
             </div>
             <div class="userInfo">
-                <div><span>Ваш USER_ID: <?= $_SESSION['user']['id']?></span></div>
-                <div><span>Ваше Ф.И.О: <?= $_SESSION['user']['fullname']?></span></div>
-                <div><span>Ваша почта: <?= $_SESSION['user']['mail']?></span></div>
-                <div><span>Ваша дата регистрации: <?= $_SESSION['user']['date']?></span></div>
+                <div><span>Ваш USER_ID: <?= $userinfo['id']?></span></div>
+                <div><span>Ваше Ф.И.О: <?= $userinfo['fullname']?></span></div>
+                <div><span>Ваша почта: <?= $userinfo['mail']?></span></div>
+                <div><span>Ваша дата регистрации: <?= $userinfo['date']?></span></div>
                 <div>
                 <span>Ваш статус: 
                 <?php
-                if (!$_SESSION['user']['status']){
+                if (!$userinfo['status']){
                     echo 'Пользователь';
                 }
-                if ($_SESSION['user']['status'] == 1){
+                if ($userinfo['status'] == 1){
                     echo 'Администратор';
                 }
                 ?>
@@ -97,7 +99,7 @@ require_once __DIR__ . '../connect.php';
                         $statuslistquery = $pdo->query("SELECT `name` FROM `status_list` WHERE id = '".$order['status']."'");
                         $statuslist = $statuslistquery->fetch();
                         ?>
-                            <div class="orderInProcessHeader"><span>Номер заказа: <?=$order['id']?> Статус:<?=$statuslist['name']?></span><div class="forHeader"><span>Дата заказа: <?=$order['date']?></span><div><?php if($order['status'] < 2):?><a href="order_cancel.php?id=<?php echo $order['id'];?>"><img class="cancelOrder" src="img/minus.png"></a><?php endif;?></div></div></div>
+                            <div class="orderInProcessHeader"><span>Номер заказа: <?=$order['id']?> Статус:<?=$statuslist['name']?></span><div class="forHeader"><span>Дата заказа: <?=$order['date']?></span><div><?php if($order['status'] < 2):?><a href="order_cancel.php?id=<?php echo $order['id'];?>"><img class="cancelOrder" src="../img/minus.png"></a><?php endif;?></div></div></div>
                         <?php
                         $usercart = explode(';',$order['items']);
                         $usercart = array_diff($usercart, array(''));
@@ -124,7 +126,7 @@ require_once __DIR__ . '../connect.php';
                         $statuslistquery = $pdo->query("SELECT `name` FROM `status_list` WHERE id = '".$order['status']."'");
                         $statuslist = $statuslistquery->fetch();
                         ?>
-                            <div class="orderInProcessHeader"><span>Номер заказа: <?=$order['id']?> Статус:<?=$statuslist['name']?></span><div class="forHeader"><span>Дата заказа: <?=$order['date']?></span><div><?php if($order['status'] < 2):?><a href="order_cancel.php?id=<?php echo $order['id'];?>"><img class="cancelOrder" src="img/minus.png"></a><?php endif;?></div></div></div>
+                            <div class="orderInProcessHeader"><span>Номер заказа: <?=$order['id']?> Статус:<?=$statuslist['name']?></span><div class="forHeader"><span>Дата заказа: <?=$order['date']?></span><div><?php if($order['status'] < 2):?><a href="order_cancel.php?id=<?php echo $order['id'];?>"><img class="cancelOrder" src="../img/minus.png"></a><?php endif;?></div></div></div>
                         <?php
                         $usercart = explode(';',$order['items']);
                         $usercart = array_diff($usercart, array(''));
@@ -144,11 +146,11 @@ require_once __DIR__ . '../connect.php';
                     </div>
                 </div>
         </div>
-        <?php if($_SESSION['user']['status'] == 1):?><div class="textBlock"><span><a href="admin.php">Открыть панель администрирования</a></span></div><?php endif;?>
+        <?php if($userinfo['status'] == 1):?><div class="textBlock"><span><a href="../admin/admin.php">Открыть панель администрирования</a></span></div><?php endif;?>
     </div>
     <footer>
         <div>
-            <div><img src="img/cart.png"><img src="img/cart.png"></div>
+            <div><img src="../img/cart.png"><img src="../img/cart.png"></div>
         </div>
         <div>
             <div>Адрес: Пушкина дом 3<br>Телефон: +790953372613</div>
