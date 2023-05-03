@@ -17,40 +17,7 @@ $userinfo = $userinfoquery->fetch();
     <title>Skido4kin</title>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="../img/logo.png">
-        </div>
-        <div class="buttons">
-            <div><a href="../index.php">Главная</a></div>
-            <div>О нас</div>
-            <div>Контакты</div>
-            <div class="catalogDiv"><a class="aDisable">Каталог</a></div>
-            <div>Акции</div>
-        </div>
-        <div class="menu">
-            <img src="../img/cart.png">
-            <a href="login.php"><img src="../img/user.png"></a>
-        </div>
-        <div class="menuwrap"><img src="../img/menu.png"></div>
-    </header>
-    <div class="menuDiv"></div>
-    <div class="catalog">
-        <div>
-            <div><a href="scooters.php">Самокаты</a></div>
-            <div>Велосипеды</div>
-            <div>Скутеры</div>
-            <div>Ролики</div>
-            <div>Drugs</div>
-        </div>
-        <div>
-            <div>Тест1</div>
-            <div>Тест2</div>
-            <div>Тест2Самокаты</div>
-            <div>Самокаты</div>
-            <div>Самокаты</div>
-        </div>
-    </div>
+    <?php include '../user/header.php' ?>
     <div class="container">
         <div class="textBlock"><span>Добро пожаловать в личный кабинет, <?= $userinfo['login']?></span></div>
         <?php 
