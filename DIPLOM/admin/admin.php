@@ -6,7 +6,8 @@ $userinfo = $userinfoquery->fetch();
 if ($userinfo['status'] != 1){
     header('Location: ../user/profile.php');
 }
-
+$catalog_categoryquery = $pdo->query("SELECT * FROM `catalog_category`");
+$catalog_category = $catalog_categoryquery->fetchAll();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,14 +28,29 @@ if ($userinfo['status'] != 1){
         </div>
     </header>
     <div class="nameOfPanel"><span>Главная панель управления сайтом</span></div>
+    <?php if($_SESSION['message']):?><div class="impMessage"><span><?= $_SESSION['message']?></span></div><?php endif;?>
+    <?php unset($_SESSION['message']);?>
     <div class="container_panel">
-        <div class="controlPanel">
-            <div>
-                <form class="controlPanelForm">
-                <div class="nameOfPanel"><span>Управление категориями</span></div>
-                    <label>Надо сосать</label>
-                </form>
-            <div>
+        <div class="panel">
+            <form class="controlPanelForm" method="POST" action="category_add.php">
+                <div class="nameOfPanel"><span>Добавление категорий</span></div>
+                <div><span>Название категории</span></div>
+                <input type="text" name="category" placeholder="Введите название">
+                <input type="submit" value="ДОБАВИТЬ">
+            </form>
+        <div>
+        <div class="panel">
+            <form class="controlPanelForm" method="POST" action="category_delete.php">
+                <div class="nameOfPanel"><span>Удаление категорий</span></div>
+                <div><span>Выберите категорию</span></div>
+                <select name="category">
+                <option value="0">ВЫБЕРИТЕ КАТЕГОРИЮ</option>
+                <?php foreach ($catalog_category as $category_item):?>
+                    <option value="<?=$category_item['id']?>"><?=$category_item['name']?></option>>
+                <?php endforeach;?>
+                </select>
+                <input type="submit" value="УДАЛИТЬ">
+            </form>
         <div>
     </div>
 </body>

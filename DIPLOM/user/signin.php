@@ -18,7 +18,8 @@ $usercheckdata = $usercheck->fetch();
 
 if ($usercheckdata){
     $_SESSION['user'] = [
-        "id"=> $usercheckdata['id']
+        "id"=> $usercheckdata['id'],
+        "status"=>$usercheckdata['status']
     ];
     $response = [
         "status" => true

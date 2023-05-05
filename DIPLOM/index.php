@@ -1,12 +1,8 @@
 <?php
 require_once __DIR__ . '../connect.php';
-function get_catalog(): array
-{
-    global $pdo;
-    $res = $pdo->query("SELECT * FROM `catalog` ORDER BY id DESC LIMIT 0,6;");
-    return $res->fetchAll();
-}
-$catalog = get_catalog();
+
+$res = $pdo->query("SELECT * FROM `catalog` ORDER BY id DESC LIMIT 0,6;");
+$catalog =  $res->fetchAll();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +14,8 @@ $catalog = get_catalog();
     <title>Skido4kin</title>
 </head>
 <body>
-    <?php include 'user/header.php' ?>
+<div class="wrapper">
+<?php include 'header.php' ?>
     <div class="container">
         <div class="news">
             <div class="newsHead"><span>Последние новости:</span><span>Дата:</span></div>
@@ -42,7 +39,7 @@ $catalog = get_catalog();
             <?php foreach ($catalog as $item): ?>
                 <div class="item">
                     <a href="user/itempage.php?id=<?php echo $item['id'];?>">
-                    <div class="itemImg"><img src="<?=$item['photo']?>"></div>
+                    <div class="itemImg"><?php if($item['photo']):?><img src="<?=$item['photo']?>"><?php else:?><img src="../img/catalog/nothing.png"><?php endif?></div>
                     <div class="itemPrice"><span><?= $item['price']?>Р</span><?php if ($item['price_before'] >= 1):?><span><div class="priceBeforeLine"></div><?=$item['price_before']?>Р</span><?php endif;?></div>
                     <div class="itemName"><span><?= $item['name']?></span></div>
                     </a>
@@ -67,7 +64,8 @@ $catalog = get_catalog();
             <div>Адрес: Пушкина дом 3<br>Телефон: +790953372613</div>
         </div>
     </footer>
+</div>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="js/js.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

@@ -16,49 +16,17 @@ $catalog = $res->fetchAll();
     <title>Skido4kin</title>
 </head>
 <body>
+<div class="wrapper">
 <?php foreach ($catalog as $item): ?>
     <div><?php $item['name']?> </div>
 <?php endforeach; ?>
-    <header>
-        <div class="logo">
-            <img src="../img/logo.png">
-        </div>
-        <div class="buttons">
-            <div><a href="../index.php">Главная</a></div>
-            <div>О нас</div>
-            <div>Контакты</div>
-            <div class="catalogDiv"><a class="aDisable">Каталог</a></div>
-            <div>Акции</div>
-        </div>
-        <div class="menu">
-            <a href="cart.php"><img src="../img/cart.png"></a>
-            <img src="../img/user.png">
-        </div>
-        <div class="menuwrap"><img src="../img/menu.png"></div>
-    </header>
-    <div class="menuDiv"></div>
-    <div class="catalog">
-        <div>
-            <div><a href="scooters.php">Самокаты</a></div>
-            <div>Велосипеды</div>
-            <div>Скутеры</div>
-            <div>Ролики</div>
-            <div>Drugs</div>
-        </div>
-        <div>
-            <div>Тест1</div>
-            <div>Тест2</div>
-            <div>Тест2Самокаты</div>
-            <div>Самокаты</div>
-            <div>Самокаты</div>
-        </div>
-    </div>
+<?php include '../user/header.php' ?>
     <div class="container">
         <?php if (!empty($catalog)): ?>
             <?php foreach ($catalog as $item): ?>
                 <div class="itemPageName"><span><?= $item['name']?></span></div>
                 <div class="itemPageItem">
-                    <div class="itemPageImg"><img src="../<?= $item['photo']?>"></div>
+                    <div class="itemPageImg"><?php if($item['photo']):?><img src="<?=$item['photo']?>"><?php else:?><img src="../img/catalog/nothing.png"><?php endif?></div>
                     <div class="itemPageDesc"><span><?= $item['description']?></span></div>
                 </div>
                 <div class="itemPageInfo">
@@ -79,6 +47,7 @@ $catalog = $res->fetchAll();
             <div>Адрес: Пушкина дом 3<br>Телефон: +790953372613</div>
         </div>
     </footer>
+</div>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="../js/main.js"></script>
 </body>

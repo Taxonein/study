@@ -1,11 +1,11 @@
 <?php
 session_start();
-require_once __DIR__ . '../../connect.php';
-$userinfoquery = $pdo->query("SELECT * FROM `users` WHERE id = '".$_SESSION['user']['id']."'");
-$userinfo = $userinfoquery->fetch();
-if ($userinfo['status'] != 1){
+if ($_SESSION['user']['status'] != 1){
     header('Location: ../user/profile.php');
 }
+require_once __DIR__ . '../../connect.php';
+$catquery = $pdo->query("SELECT * FROM `catalog_category`");
+$cats = $catquery->fetchAll();
 $id = $_GET['id'];
 
 ?>
@@ -21,7 +21,7 @@ $id = $_GET['id'];
 <body>
     <header>
         <div>
-            <div><span>Панель администратора: <?=$_SESSION['user']['login']?></span><a href="../index.php"><span>НА САЙТ</span><a href="../admin.php"><span>НА ГЛАВНУЮ ПАНЕЛИ</span></a></div>
+            <div><span>Панель администратора: <?=$_SESSION['user']['login']?></span><a href="../index.php"><span>НА САЙТ</span><a href="admin.php"><span>НА ГЛАВНУЮ ПАНЕЛИ</span></a></div>
         </div>
         <div>
             <div><a href="orders.php"><span>ЗАКАЗЫ</span></a><a href="catalog.php"><span>КАТАЛОГ</span></a></div>
@@ -29,7 +29,9 @@ $id = $_GET['id'];
     </header>
     <div class="filter">
         <a href="catalog.php"><span>ВСЕ ТОВАРЫ</span></a>
-        <a href="catalog.php?id=<?php echo ('1');?>"><span>САМОКАТЫ</span></a>
+        <?php foreach ($cats as $cat):?>
+        <a href="catalog.php?id=<?= $cat['id'];?>"><span><?= $cat['name'];?></span></a>
+        <?php endforeach;?>
     </div>
     <div class="container">
         <?php

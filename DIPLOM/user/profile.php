@@ -17,6 +17,7 @@ $userinfo = $userinfoquery->fetch();
     <title>Skido4kin</title>
 </head>
 <body>
+<div class="wrapper">
     <?php include '../user/header.php' ?>
     <div class="container">
         <div class="textBlock"><span>Добро пожаловать в личный кабинет, <?= $userinfo['login']?></span></div>
@@ -28,8 +29,8 @@ $userinfo = $userinfoquery->fetch();
         ?>
         <div class="userGUI">
             <div class="userphoto">
-                <?php if($userinfo['img']):?><img src="../<?= $userinfo['img']?>"><?php else:?><img src="img/nothing.png"><?php endif;?>
-                <form class="userForm" action="userchange.php?id=<?= $userinfo['id']?>" method="POST" enctype='multipart/form-data'>
+                <?php if($userinfo['img']):?><img src="../<?= $userinfo['img']?>"><?php else:?><img src="../img/nothing.png"><?php endif;?>
+                <form class="userForm" action="userchange.php" method="POST" enctype='multipart/form-data'>
                     <label>Загрузить новое фото профиля:</label>
                     <input name="userimg" type="file">
                     <button type="submit">ЗАГРУЗИТЬ</button>
@@ -39,7 +40,7 @@ $userinfo = $userinfoquery->fetch();
                 <div><span>Ваш USER_ID: <?= $userinfo['id']?></span></div>
                 <div><span>Ваше Ф.И.О: <?= $userinfo['fullname']?></span></div>
                 <div><span>Ваша почта: <?= $userinfo['mail']?></span></div>
-                <div><span>Ваша дата регистрации: <?= $userinfo['date']?></span></div>
+                <div><span>Ваша дата регистрации: <?= $userinfo['register_date']?></span></div>
                 <div>
                 <span>Ваш статус: 
                 <?php
@@ -123,7 +124,8 @@ $userinfo = $userinfoquery->fetch();
             <div>Адрес: Пушкина дом 3<br>Телефон: +790953372613</div>
         </div>
     </footer>
+</div>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="js/js.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>

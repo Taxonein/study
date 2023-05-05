@@ -24,6 +24,7 @@ global $carttotalprice;
 </head>
 
 <body>
+<div class="wrapper">
     <?php include '../user/header.php' ?>
     <div class="container">
         <div class="flexCenter">
@@ -31,7 +32,6 @@ global $carttotalprice;
             <span class="formMsg displayNone"></span>
         </div>
         <div class="cartItems">
-            <!-- СЕКЦИЯ ТОВАРОВ КОРЗИНЫ ДЛЯ ПК -->
             <?php if ($cart['cart']): ?>
                 <?php
                 $usercart = explode(';',$cart['cart']);
@@ -99,6 +99,7 @@ global $carttotalprice;
             <div>Адрес: Пушкина дом 3<br>Телефон: +790953372613</div>
         </div>
     </footer>
+</div>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="../js/main.js"></script>
 </body>

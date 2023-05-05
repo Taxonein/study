@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '../../connect.php';
+require_once __DIR__ . '../connect.php';
 $categoriesquery = $pdo->query("SELECT * FROM `catalog_category`");
 $categories= $categoriesquery->fetchAll();
 ?>
@@ -16,8 +16,8 @@ $categories= $categoriesquery->fetchAll();
             <div>Акции</div>
         </div>
         <div class="menu">
-            <a href="../user/cart.php"><img src="../img/cart.png"></a>
-            <a href="../user/profile.php"><img src="../img/user.png"></a>
+            <a href="user/cart.php"><img src="../img/cart.png"></a>
+            <a href="user/profile.php"><img src="../img/user.png"></a>
         </div>
         <div class="menuwrap"><img src="../img/menu.png"></div>
     </header>

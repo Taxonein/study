@@ -237,21 +237,59 @@ header div div a span{
     border: 4px solid yellow;
     font-size: 25px;
 }
+.container_panel{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+.controlPanelForm{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+}
 .controlPanel{
+    display: flex;
     width: 100%;
 }
+.panel{
+    display: flex;
+    margin: 0 20px 0 20px;
+}
 .nameOfPanel{
+    margin-top: 0 !important;
     width: 100%;
     display: flex;
     justify-content: center;
     background-color: grey;
 }
-.nameOfPanel span{
-    font-size: 25px;
-    align-self: center;
+.controlPanelForm input{
+    display: flex;
+    height: 30px;
+    margin-top: 10px;
+    font-size: 20px;
+    justify-content: center;
 }
-.controlPanel{
+.controlPanelForm div{
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 10px;
+}
+.controlPanelForm select{
+    font-size: 20px;
+    margin-top: 10px;
+    height: 36px;
+}
+.controlPanelForm div span{
+    font-size: 20px;
+}
+.impMessage{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.impMessage span{
+    padding: 10px;
+    border: 2px solid yellow;
+    font-size: 20px;
 }

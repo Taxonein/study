@@ -16,7 +16,7 @@ $('.loginFormSubmit').on('click', function (e) {
             dataType: "json",
             success: function (data) {
                 if (data.status){
-                    document.location.href= '../profile.php';
+                    document.location.href= '../user/profile.php';
                 }else{
                     $('.formMsg').removeClass('displayNone').text(data.message);
                     $('.loadGif').addClass('displayNone');
@@ -27,6 +27,39 @@ $('.loginFormSubmit').on('click', function (e) {
         $('.formMsg').removeClass('displayNone').text('Введите данные');
         $('.loadGif').addClass('displayNone');
     }
+});
+// REGISTER FORM SUBMIT
+$('.registerSubmitButton').on('click', function (e) {
+    e.preventDefault();
+    let fullname = $('input[name="fullname"]').val(),
+    login = $('input[name="login"]').val();
+    password = $('input[name="password"]').val();
+    password_reply = $('input[name="password_reply"]').val();
+    email = $('input[name="email"]').val();
+    $('.loadGif').removeClass('displayNone');
+    $('.formMsg').addClass('displayNone');
+    $.ajax({
+        type: "POST",
+        url: "../user/signup.php",
+        data: {
+            fullname: fullname,
+            login: login,
+            password: password,
+            password_reply: password_reply,
+            email: email
+        },
+        dataType: "json",
+        success: function (data) {
+            if (data.status){
+                document.location.href= '../user/profile.php';
+                $('.formMsg').removeClass('displayNone').text(data.message);
+                $('.loadGif').addClass('displayNone');
+            }else{
+                $('.formMsg').removeClass('displayNone').text(data.message);
+                $('.loadGif').addClass('displayNone');
+            }
+        }
+    });
 });
 //ADD TO CART SUBMIT
 $('.addToCart').on('click', function (e) {
@@ -138,7 +171,6 @@ $('.cartTotalOrder').on('click', function (e) {
         }
     });    
 });
-
 
 
 $('.catalogDiv').click(function(){ 

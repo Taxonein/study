@@ -1,11 +1,11 @@
 <?php
 session_start();
+if ($_SESSION['user']['status'] != 1){
+    header('Location: ../user/profile.php');
+}
 require_once __DIR__ . '../../connect.php';
 $userinfoquery = $pdo->query("SELECT * FROM `users` WHERE id = '".$_SESSION['user']['id']."'");
 $userinfo = $userinfoquery->fetch();
-if ($userinfo['status'] != 1){
-    header('Location: ../user/profile.php');
-}
 $id = $_GET['id'];
 
 ?>
@@ -21,7 +21,7 @@ $id = $_GET['id'];
 <body>
     <header>
         <div>
-            <div><span>Панель администратора: <?=$_SESSION['user']['login']?></span><a href="../index.php"><span>НА САЙТ</span></a><a href="../admin.php"><span>НА ГЛАВНУЮ ПАНЕЛИ</span></a></div>
+            <div><span>Панель администратора: <?=$_SESSION['user']['login']?></span><a href="../index.php"><span>НА САЙТ</span></a><a href="admin.php"><span>НА ГЛАВНУЮ ПАНЕЛИ</span></a></div>
         </div>
         <div>
             <div><a href="orders.php"><span>ЗАКАЗЫ</span></a><a href="catalog.php"><span>КАТАЛОГ</span></a></div>
