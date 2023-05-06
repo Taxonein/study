@@ -10,10 +10,10 @@ $categories= $categoriesquery->fetchAll();
         </div>
         <div class="buttons">
             <div><a href="../index.php">Главная</a></div>
-            <div>О нас</div>
-            <div>Контакты</div>
+            <div><a href="../about.php">О нас</a></div>
+            <div><a href="../contacts.php">Контакты</a></div>
             <div class="catalogDiv"><a class="aDisable">Каталог</a></div>
-            <div>Акции</div>
+            <div><a href="../promo.php?page=1">Акции</a></div>
         </div>
         <div class="menu">
             <a href="../user/cart.php"><img src="../img/cart.png"></a>

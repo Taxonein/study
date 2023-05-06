@@ -14,8 +14,8 @@ $category = $_POST['category'];
 $file = $_FILES['img'];
 $path = 'img/catalog/' . time() . 'x'.$id.'x' . $_FILES['img']['name'];
 
-// var_dump($file['size']);
-if (!($price < 1 || strlen($name) < 5 || strlen($description) < 5)){
+
+if (!($price < 1 || strlen($name) < 5)){
 if($file['size'] > 10){
     move_uploaded_file($_FILES['img']['tmp_name'], '../' . $path); 
     $pdo->query("UPDATE `catalog` SET `id` ='".$id."', `name` = '".$name."', `description` = '".$description."', `qty` = '".$qty."', `price` = '".$price."', `price_before` = '".$price_before."', `photo` = '".$path."', `category` = '".$category."' WHERE id = $id");

@@ -48,7 +48,7 @@ $id = $_GET['id'];
             $userquery = $pdo->query("SELECT * FROM `users` WHERE id = '".$item['user_id']."'");
             $user = $userquery->fetch();
             ?>
-            <div class="orderId"><div><span>ID заказа: <?= $item['id']?></span><span>Дата заказа: <?= $item['date']?></span><span>ФИО заказчика: <?= $user['fullname']?></span><span>Статус заказа: <?= $status['name']?></span></div><div><a href="order_cancel.php?id=<?php echo $item['id'];?>"><span>ОТМЕНИТЬ</span></a><a href="order_accept.php?id=<?php echo $item['id'];?>"><span>ПОДТВЕРДИТЬ</span></a></div></div>
+            <div class="orderId"><div><span>ID заказа: <?= $item['id']?></span><span>Дата заказа: <?= $item['date']?></span><span>ФИО заказчика: <?= $user['fullname']?></span><span>Статус заказа: <?= $status['name']?></span></div><div><?php if(!($item['status'] == 3) && !($item['status'] == 2)):?><a href="order_cancel.php?id=<?php echo $item['id'];?>"><span>ОТМЕНИТЬ</span></a><?php endif;?><?php if(!($item['status'] == 3) && !($item['status'] == 2)):?><a href="order_accept.php?id=<?php echo $item['id'];?>"><span>ПОДТВЕРДИТЬ</span></a><?php endif;?></div></div>
             <div class="orderContent">
             <?php foreach ($userorderitems as $iteminfo): ?>
             <?php

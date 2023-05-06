@@ -1,17 +1,11 @@
 <?php
 session_start();
 if ($_SESSION['user']['status'] != 1){
-    header('Location: ../login.php');
+    header('Location: ../user/profile.php');
 }
 require_once __DIR__ . '../../connect.php';
 $catquery = $pdo->query("SELECT * FROM `catalog_category`");
 $cats = $catquery->fetchAll();
-$id = $_GET['id'];
-$catalogquery = $pdo->query("SELECT * FROM `catalog` WHERE `id` = '".$id."'");
-$catalog = $catalogquery->fetch();
-
-$categoryquery = $pdo->query("SELECT * FROM `catalog_category`");
-$category_list = $categoryquery->fetchAll();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,28 +40,22 @@ $category_list = $categoryquery->fetchAll();
         $catalogcategoryquery = $pdo->query("SELECT `name` FROM `catalog_category` WHERE `id` = '".$item['category']."'");
         $category = $catalogcategoryquery->fetch();
         ?>
-        <form action="catalog_update.php?id=<?= $catalog['id']?>" method="POST" enctype='multipart/form-data'>
+        <form action="catalog_add.php" method="POST" enctype='multipart/form-data'>
         <div class="catalogItemInfoEdit">
-            <div><input type="text" name="name" value="<?=$catalog['name']?>"></div>
+            <div><input type="text" name="name" value=""></div>
         </div>
         <div class="catalogItemDescriptionEdit">
             <div><?php if($catalog['photo']):?><img src="../<?=$catalog['photo']?>"><?php else:?><img src="../img/catalog/nothing.png"><?php endif; ?></div>
-            <div><textarea name="description"><?= $catalog['description']?></textarea></div>
+            <div><textarea name="description"></textarea></div>
         </div>
         <div class="catalogItemBody">
             <div>
-                <span>ID товара: <?= $catalog['id']?></span>
-                <span>Дата добавления: <?= $catalog['date']?></span>
-            </div>
-            <div>
-                <div><span>Кол-во на складе: </span><input class="catalogItemBodyInputOne" type="text" name="qty" value="<?=$catalog['qty']?>"></div>
-            </div>
-        </div>
-        <div class="catalogItemBody">
-            <div>
-                <span>Цена:</span><input class="catalogItemBodyInputOne" type="text" name="price" placeholder="<?=$catalog['price']?>">
-                <span>Цена без скидки</span><input class="catalogItemBodyInputOne" type="text" name="price_before" placeholder="<?=$catalog['price_before']?>">
+                <span>Цена:</span><input class="catalogItemBodyInputOne" type="text" name="price" placeholder="">
+                <span>Цена без скидки</span><input class="catalogItemBodyInputOne" type="text" name="price_before" placeholder="">
                 <span>Загрузить фото:</span><input class="catalogItemBodyInputThree" name="img" type="file">
+            </div>
+            <div>
+                <div><span>Кол-во на складе: </span><input class="catalogItemBodyInputOne" type="text" name="qty" value=""></div>
             </div>
         </div>
         <div class="catalogItemBody">
@@ -75,7 +63,8 @@ $category_list = $categoryquery->fetchAll();
                 <div>
                     <span>Категория товара:</span>
                     <select class="categorySelect" name="category">
-                        <?php foreach($category_list as $cat): ?>
+                    <option value="0" selected>ВЫБЕРИТЕ КАТЕГОРИЮ</option>
+                        <?php foreach($cats as $cat): ?>
                             <?php if ($cat['id'] == $catalog['category']): ?>
                                 <option value="<?= $cat['id']?>" selected><?= $cat['name']?></option>
                             <?php else:?>

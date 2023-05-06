@@ -1,9 +1,11 @@
 <?php
+require_once __DIR__ . '../../connect.php';
 session_start();
-if ($_SESSION['user']['status'] != 1){
+$userinfoquery = $pdo->query("SELECT * FROM `users` WHERE id = '".$_SESSION['user']['id']."'");
+$userinfo = $userinfoquery->fetch();
+if ($userinfo['status'] != 1){
     header('Location: ../user/profile.php');
 }
-require_once __DIR__ . '../../connect.php';
 $catquery = $pdo->query("SELECT * FROM `catalog_category`");
 $cats = $catquery->fetchAll();
 $id = $_GET['id'];
@@ -33,6 +35,10 @@ $id = $_GET['id'];
         <a href="catalog.php?id=<?= $cat['id'];?>"><span><?= $cat['name'];?></span></a>
         <?php endforeach;?>
     </div>
+    <div class="center">
+        <a href="category_addcatalog.php"><span>ДОБАВИТЬ ТОВАР</span></a>
+    </div>
+<div class="wrapper">
     <div class="container">
         <?php
         if ($id){
@@ -50,8 +56,8 @@ $id = $_GET['id'];
             $category = $catalogcategoryquery->fetch();
             ?>
                 <hr>
-                <div class="catalogItemInfo"><div><span><?= $item['name']?></span></div><div><a href="catalog_edit.php?id=<?php echo $item['id'];?>"><span>РЕДАКТИРОВАТЬ</span></a></div></div>
-                <div class="catalogItemInfo"><div><span>На складе: <?= $item['qty']?> шт</span><span>Категория товара: <?= $category['name']?></span></div><div><span>Дата добавления: <?= $item['date']?></span></div></div>
+                <div class="catalogItemInfo"><div><span><?= $item['name']?></span></div><div><a href="catalog_delete.php?id=<?php echo $item['id'];?>"><span>УДАЛИТЬ</span></a><a href="catalog_edit.php?id=<?php echo $item['id'];?>"><span>РЕДАКТИРОВАТЬ</span></a></div></div>
+                <div class="catalogItemInfo"><div><span>На складе: <?= $item['qty']?> шт</span><span>Категория товара: <?= $category['name']?></span><span>ID товара: <?= $item['id']?></span></div><div><span>Дата добавления: <?= $item['date']?></span></div></div>
                 <div class="catalogItem">
                     <div class="catalogItemImg"><?php if($item['photo']):?><img src="../<?= $item['photo']?>"><?php else:?><img src="../img/catalog/nothing.png"><?php endif; ?></div>
                     <div class="catalogItemDescription"><span><?=$item['description']?></span></div>
@@ -59,5 +65,6 @@ $id = $_GET['id'];
             <?php endforeach;?>
         <div>
     <div>
+</div>
 </body>
 </html>

@@ -1,7 +1,6 @@
 @media (min-width: 1920px){
     header{
         padding: 0 277px 0 277px;
-        background-color: red;
     }
     .container{
         padding: 0 277px 0 277px;
@@ -109,7 +108,6 @@ body{
 }
 header{
     height: 40px;
-    background-color: rgb(212, 212, 212);
     flex-wrap: wrap;
     display: flex;
     justify-content: space-between;
@@ -150,31 +148,34 @@ header{
     justify-content: center;
 }
 .wrapper{
-    min-height: 100%;
     display: flex;
     flex-direction: column;
+    min-height: 100%;
 }
 footer{
     margin-top: 20px;
-    background-color: rgb(221, 221, 221);
+    background-color: #08873f;
     display: flex;
     font-size: 25px;
     width: 100%;
     justify-content: space-around;
+    margin-bottom: 0;
+    flex: 0 0 auto;
 }
 footer div img{
     width: 58px;
     height: 58px;
+    margin-right: 10px;
 }
 footer div:nth-child(1){
     display: flex;
 }
 .news{
     width: 100%;
-    background-color: antiquewhite;
+    background-color: #35b451;
 }
 .newsHead{
-    background-color: bisque;
+    background-color: #35b451;
     width: 100%;
     height: 50px;
     display: flex;
@@ -183,6 +184,7 @@ footer div:nth-child(1){
 }
 .newsHead span{
     align-self: center;
+    color: white;
 }
 .newsHead span:nth-child(1){
     font-size: 30px;
@@ -190,27 +192,31 @@ footer div:nth-child(1){
 .newsHead span:nth-child(2){
     font-size: 20px;
 }
+.newsBody{
+    font-size: 18px;
+    color: white;
+}
 .news img{
     display: flex;
     float: left;
     width: 400px;
     height: 200px;
-    margin: 0 20px 20px 0;
+    margin: 0 20px 0 0;
 }
 .textBlock{
     margin-top: 20px;
     display: flex;
     justify-content: center;
-    background-color: rgb(211, 211, 211);
+    background-color: #35b451;
 }
 .textBlock span{
     align-self: center;
     font-size: 30px;
+    color: white;
 }
 .items{
     margin-top: 20px;
     width: 100%;
-    background-color: rgb(131, 131, 131);
     display: flex;
     justify-content: center;
     flex-wrap:wrap;
@@ -221,7 +227,6 @@ footer div:nth-child(1){
     flex-direction: column;
     width: 260px;
     height: 370px;
-    background-color: rgb(223, 223, 223);
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 .buyButton{
@@ -295,12 +300,14 @@ footer div:nth-child(1){
 .itemPageName{
     width: 100%;
     padding: 5px 0px 5px 0px;
-    background-color: red;
+    background-color: rgb(16, 196, 76);
     display: flex;
 }
 .itemPageName span{
     font-size: 25px;
     align-self: center;
+    color: white;
+    font-weight: bold;
 }
 .itemPageImg{
     width: 400px;
@@ -451,11 +458,11 @@ footer div:nth-child(1){
 }
 .userInfoExit{
     padding: 5px;
-    background-color: antiquewhite;
+    background-color: #35b451;
     text-align: center;
 }
 .userInfoExit a{
-    color: rgb(156, 74, 49) !important;
+    color: white !important;
 }
 .cartItems{
     display: flex;
@@ -464,7 +471,6 @@ footer div:nth-child(1){
 .cartItem{
     width: 100%;
     height: 200px;
-    background-color: rgb(158, 158, 158);
     display: flex;
     overflow: hidden;
 }
@@ -475,12 +481,12 @@ footer div:nth-child(1){
 }
 .cartItemImg{
     height: 200px;
-    width: 350px;
+    width: 300px;
     display: flex;
 }
 .cartItemImg img{
     height: 200px;
-    width: 350px;
+    width: 300px;
 }
 .cartItemMain{
     width: 100%;
@@ -493,7 +499,7 @@ footer div:nth-child(1){
     justify-content: space-between;
     flex-wrap: wrap;
     width: 100%;
-    background-color: rgb(211, 211, 211);
+    background-color: #35b451;
 }
 .cartTextBlockRight{
     display: flex;
@@ -509,6 +515,7 @@ footer div:nth-child(1){
 .cartTextBlock span{
     align-self: center;
     font-size: 25px;
+    color: white;
 }
 .cartItemDescription{
     /* overflow: hidden; */
@@ -522,7 +529,10 @@ footer div:nth-child(1){
     justify-content: right;
     flex-wrap: wrap;
     width: 100%;
-    background-color: rgb(110, 110, 110);
+    background-color: #2a773b;
+}
+.cartItemManage span{
+    color: white;
 }
 .CartItemQty{
     display: flex;
@@ -576,7 +586,7 @@ footer div:nth-child(1){
     display: flex;
     justify-content: space-between;
     width: 100%;
-    background-color: rgb(211, 211, 211);
+    background-color: #2a773b;
 }
 .cartTotalInfo{
     display: flex;
@@ -586,10 +596,12 @@ footer div:nth-child(1){
     font-size: 25px;
     align-self: center;
     margin-right: 10px;
+    color: white;
 }
 .cartTotalInfo span:nth-child(2){
     font-size: 25px;
     align-self: center;
+    color: white;
 }
 .cartTotalOrder{
     display: flex;
@@ -598,6 +610,7 @@ footer div:nth-child(1){
 .cartTotalOrder span{
     align-self: center;
     font-size: 25px;
+    color: white;
 }
 .messageBlock{
     display: flex;
@@ -614,7 +627,6 @@ footer div:nth-child(1){
 }
 .PurchaseHistory{
     width: 100%;
-    background-color: rgb(216, 216, 216);
 }
 .PurchaseHistoryNav{
     width: 100%;
@@ -624,17 +636,18 @@ footer div:nth-child(1){
     display: flex;
     justify-content: center;
     height: 40px;
-    background-color: rgb(211, 211, 211);
+    background-color: #35b451;
 }
 .profileTextBlock span{
     align-self: center;
     font-size: 25px;
+    color: white;
 }
 .orderInProcessHeader{
     width: 100%;
     flex-wrap: wrap;
-    background-color: blue;
     display: flex;
+    background-color: #2a773b;
     margin-bottom: 10px;
     justify-content: space-between;
 }
@@ -647,6 +660,7 @@ footer div:nth-child(1){
 .orderInProcessHeader span{
     font-size: 25px;
     align-self: center;
+    color: white;
 }
 .orderInProcessBody{
     display: flex;
@@ -675,4 +689,56 @@ footer div:nth-child(1){
 }
 .pageSelect div span{
     font-size: 40px;
+}
+.aboutSector{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #35b451;
+    padding: 20px 0 0 0;
+}
+.aboutSectorHead{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.aboutSectorHead span{
+    align-self: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+.aboutSectorBody{
+    display: flex;
+}
+.aboutSectorBody div{
+    display: flex;
+    width: 50%;
+    padding: 10px 10px 10px 10px;
+}
+.aboutSectorBody div span{
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+}
+.aboutSectorImgCenter{
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+}
+.aboutSectorImgCenter img{
+    width: 100%;
+}
+.categoryText{
+    display: flex;
+    height: 30px;
+    justify-content: center;
+    background-color: #35b451;
+}
+.categoryText span{
+    display: flex;
+    align-self: center;
+    color: white;
+    font-size: 20px;
 }
