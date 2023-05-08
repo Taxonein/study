@@ -1,0 +1,177 @@
+@media (max-width: 900px){
+    .buttons{
+        display: none !important;
+    }
+}
+@media (min-width: 1920px){
+    .container{
+        padding: 0 277px 0 277px;
+    }
+}
+@media (min-width: 400px){
+    .slider{
+        width: 400px !important;
+        height: 200px !important;
+    }
+    .slider{
+
+    }
+    .sliderLine{
+        width: 1200px !important;
+    }
+    .sliderLine img{
+        height: 200px !important;
+        width: 200px !important;
+    }
+}
+@media (min-width: 910px){
+    .slider{
+        width: 900px !important;
+        height: 300px !important;
+    }
+    .slider{
+
+    }
+    .sliderLine{
+        width: 1800px !important;
+    }
+    .sliderLine img{
+        height: 300px !important;
+        width: 300px !important;
+    }
+}
+
+
+html, body, .wrapper{
+    min-height: 100vh;
+}
+body{
+    margin: 0;
+    font-family: sans-serif;
+}
+.wrapper{
+    display: flex;
+    flex-direction: column;
+}
+.container{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+header{
+    height: 50px;
+    background-color: rgb(196, 196, 196);
+    display: flex;
+    justify-content: space-between;
+}
+.logo{
+    display: flex;
+}
+.logo div img{
+    height: 50px;
+    width: 160px;
+}
+.buttons{
+    display: flex;
+}
+.buttons div{
+    display: flex;
+    margin: 0 10px 0 10px;
+}
+.buttons div span{
+    align-self: center;
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+}
+.menu{
+    display: flex;
+}
+.menu div{
+    margin: 0 15px 0 15px;
+}
+.menu div img{
+    width: 50px;
+    height: 50px;
+}
+.links{
+    display: flex;
+}
+.links div{
+    height: 50px;
+    width: 50px;
+}
+.links div img{
+    height: 50px;
+    width: 50px;
+}
+.info{
+    display: flex;
+}
+.info div{
+    display: flex;
+}
+.info div span{
+    display: flex;
+    align-self: center;
+}
+footer{
+    height: 50px;
+    background-color: rgb(196, 196, 196);
+    display: flex;
+    justify-content: space-around;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+.slider{
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+}
+.sliderLine{
+    display: flex;
+    position: relative;
+    left: 0;
+    transition: 1s all;
+}
+.sliderLine img{
+    width: 200px;
+    height: 200px;
+}
+.center{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.sliderButtons{
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+.sliderButtons span{
+    align-self: center;
+    font-size: 25px;
+    margin: 5px;
+    color: blue;
+}
+.textBlock{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #84CEEB;
+}
+.textBlock span{
+    align-self: center;
+    font-size: 25px;
+}
+.modal{
+    margin: 20px auto;
+    border: 2px solid rgb(0, 255, 21);
+}

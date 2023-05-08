@@ -93,7 +93,7 @@ global $carttotalprice;
     </div>
     <footer>
         <div>
-            <div><img src="img/vk.png"><img src="img/youtube.png"></div>
+            <div><img src="../img/vk.png"><img src="../img/youtube.png"></div>
         </div>
         <div>
             <div>Адрес: 141801, Московская обл., г. Дмитров, ул. Дубненская, д.2, корп. 1, комн. 8<br>Телефон: +7(495) 902-62-92, +7(495) 579-28-52</div>

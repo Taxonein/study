@@ -1,0 +1,21 @@
+html, body, .wrapper{
+    min-height: 100vh;
+}
+body{
+    margin: 0;
+}
+.wrapper{
+    display: flex;
+    flex-direction: column;
+}
+.container{
+    flex-grow: 1;
+}
+header{
+    height: 60px;
+    background-color: red;
+}
+footer{
+    height: 60px;
+    background-color: blue;
+}
