@@ -34,16 +34,17 @@ $('.sliderNext').on('click', function (e) {
     $('.sliderLine').css('left',slider);
 });
 
-
-const modal = document.querySelector('.modal');
+// const modal = document.querySelector('.alert');
 
 $('.modalBtnOpen').on('click', function (e){
-    modal.showModal();
+    $('.alert').animate({top: '50px', opacity: '1'}, 500);
+    $('.alert').removeClass('displayNone');
 });
+// alertClose
+$('.alertClose').on('click', function (e){
+    $('.alert').addClass('displayNone');
+    $('.alert').css({"top":"0","opacity":"0"});
 
-// modalBtnClose
-$('.modalBtnClose').on('click', function (e){
-    dialog.close("test");
 });
 // const confirmBtn = document.querySelector('.modal');
 
