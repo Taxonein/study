@@ -46,6 +46,49 @@ $('.alertClose').on('click', function (e){
     $('.alert').css({"top":"0","opacity":"0"});
 
 });
+// LOGIN FORM BUTTON
+$('.loginSubmitButton').on('click', function (e) {
+    e.preventDefault();
+    $(`input`).removeClass('errorfield');
+    let login = $('input[name="login"]').val(),
+    password = $('input[name="password"]').val();
+    $('.alert').addClass('displayNone');
+    $('.alert').css({"top":"0","opacity":"0"});
+    if (!((login.length < 1) || (password.length < 1))){
+        $.ajax({
+            type: "POST",
+            url: "../php/signin.php",
+            data: {
+                login: login,
+                password: password
+            },
+            dataType: "json",
+            success: function (data) {
+                if (data.status){
+                    // document.location.href= '../profile.php';
+                    $('.alertBody').text('DA');
+                    $('.alert').animate({top: '50px', opacity: '1'}, 500);
+                    $('.alert').removeClass('displayNone');
+                }else{
+                    $('.alertBody').text(data.message);
+                    $('.alert').animate({top: '50px', opacity: '1'}, 500);
+                    $('.alert').removeClass('displayNone');
+                }
+                if (data.fields){
+                    // .errorfield
+                    data.fields.forEach(field => {
+                    $(`input[name="${field}"]`).addClass('errorfield');
+                    // $(`.${field}`).addClass('displayNone');
+                    });
+                }
+            }
+        });
+    }else{
+        $('.alertBody').text('Введите данные!');
+        $('.alert').animate({top: '50px', opacity: '1'}, 500);
+        $('.alert').removeClass('displayNone');
+    }
+});
 // const confirmBtn = document.querySelector('.modal');
 
 // $('.testmodal').click (function () {
