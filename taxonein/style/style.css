@@ -182,7 +182,7 @@ footer{
 .alert{
     position: absolute;
     right: 0;
-    width: 310px;
+    max-width: 420px;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -256,13 +256,21 @@ footer{
     border: 2px solid grey;
     background: linear-gradient(0.25turn, #84CEEB, #8860D0);
     color: white;
+    cursor: pointer;
 }
 .formBlock form span{
     display: flex;
+    margin-top: 10px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 .importantToSee{
     color: rgb(252, 192, 192);
+}
+.checkboxRules{
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-self: center;
 }

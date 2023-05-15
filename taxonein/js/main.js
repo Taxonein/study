@@ -75,10 +75,8 @@ $('.loginSubmitButton').on('click', function (e) {
                     $('.alert').removeClass('displayNone');
                 }
                 if (data.fields){
-                    // .errorfield
                     data.fields.forEach(field => {
                     $(`input[name="${field}"]`).addClass('errorfield');
-                    // $(`.${field}`).addClass('displayNone');
                     });
                 }
             }
@@ -89,6 +87,104 @@ $('.loginSubmitButton').on('click', function (e) {
         $('.alert').removeClass('displayNone');
     }
 });
+//REGISTER FORM BUTTON
+$('.registerSubmitButton').on('click', function (e) {
+    e.preventDefault();
+    $('.alert').addClass('displayNone');
+    $('.alert').css({"top":"0","opacity":"0"});
+    $(`input`).removeClass('errorfield');
+    let login = $('input[name="login"]').val(),
+    mail = $('input[name="mail"]').val(),
+    password = $('input[name="password"]').val(),
+    password_reply = $('input[name="password_reply"]').val(),
+    name = $('input[name="name"]').val(),
+    surname = $('input[name="surname"]').val(),
+    patronymic = $('input[name="patronymic"]').val(),
+    rules = $('.checkboxRules').is(':checked');
+    // if ($('.checkboxRules').is(':checked')){
+        // if (login.length > 1 && mail.length > 1 && password > 1 && password_reply > 1 && name.length > 1 && surname.length > 1 && patronymic.length > 1){
+        $.ajax({
+            type: "POST",
+            url: "../php/signup.php",
+            data: {
+                login: login,
+                password: password,
+                password_reply: password_reply,
+                mail: mail,
+                name: name,
+                surname: surname,
+                patronymic: patronymic,
+                rules: rules
+            },
+            dataType: "json",
+            success: function (data) {
+                if (data.status){
+                    // document.location.href= '../profile.php';
+                    $('.alertBody').text('DA');
+                    $('.alert').animate({top: '50px', opacity: '1'}, 500);
+                    $('.alert').removeClass('displayNone');
+                }else{
+                    $('.alertBody').text(data.message);
+                    $('.alert').animate({top: '50px', opacity: '1'}, 500);
+                    $('.alert').removeClass('displayNone');
+                }
+                if (data.fields){
+                    data.fields.forEach(field => {
+                    $(`input[name="${field}"]`).addClass('errorfield');
+                    });
+                }
+            }
+        });
+        // }else{
+        //     $('.alertBody').text('Введите все значения!');
+        //     $('.alert').animate({top: '50px', opacity: '1'}, 500);
+        //     $('.alert').removeClass('displayNone'); 
+        // }
+    // }else{
+    //     $('.alertBody').text('Вы не согласились с правилами!');
+    //     $('.alert').animate({top: '50px', opacity: '1'}, 500);
+    //     $('.alert').removeClass('displayNone'); 
+    // }
+
+    // if (preg_match('~[\\\/:*?"\'<>|]~', $str))
+    // echo 'Alert';
+
+
+
+    // if (!((login.length < 1) || (password.length < 1))){
+    //     $.ajax({
+    //         type: "POST",
+    //         url: "../php/signin.php",
+    //         data: {
+    //             login: login,
+    //             password: password
+    //         },
+    //         dataType: "json",
+    //         success: function (data) {
+    //             if (data.status){
+    //                 // document.location.href= '../profile.php';
+    //                 $('.alertBody').text('DA');
+    //                 $('.alert').animate({top: '50px', opacity: '1'}, 500);
+    //                 $('.alert').removeClass('displayNone');
+    //             }else{
+    //                 $('.alertBody').text(data.message);
+    //                 $('.alert').animate({top: '50px', opacity: '1'}, 500);
+    //                 $('.alert').removeClass('displayNone');
+    //             }
+    //             if (data.fields){
+    //                 data.fields.forEach(field => {
+    //                 $(`input[name="${field}"]`).addClass('errorfield');
+    //                 });
+    //             }
+    //         }
+    //     });
+    // }else{
+    //     $('.alertBody').text('Введите данные!');
+    //     $('.alert').animate({top: '50px', opacity: '1'}, 500);
+    //     $('.alert').removeClass('displayNone');
+    // }
+});
+
 // const confirmBtn = document.querySelector('.modal');
 
 // $('.testmodal').click (function () {

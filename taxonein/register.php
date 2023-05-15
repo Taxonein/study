@@ -34,18 +34,30 @@ require_once __DIR__ . '../php/connect.php';
         <div class="container">
             <div class="alert displayNone">
                 <div class="alertHead"><span>Оповещение</span><img class="alertClose" src="img/system/minus.png"></div>
-                <div><span class="alertBody">Тестовое Тестовое Тестовое Тестовое Тестовое</span></div>
+                <div><span class="alertBody"></span></div>
             </div>
-            <div class="textBlock"><span>Вход в личный кабинет:</span></div>
+            <div class="textBlock"><span>Регистрация на сайте:</span></div>
             <div class="center">
                 <div class="formBlock">
                     <form>
+                        <label>Ваше Имя:</label>
+                        <input type="text" name="name" placeholder="Введите свое имя"></input>
+                        <label>Ваша Фамилия:</label>
+                        <input type="text" name="surname" placeholder="Введите свою фамилию"></input>
+                        <label>Ваше Отчество:</label>
+                        <input type="text" name="patronymic" placeholder="Введите свое отчество"></input>
                         <label>Ваш логин:</label>
                         <input type="text" name="login" placeholder="Введите свой логин"></input>
+                        <label>Ваша Почта:</label>
+                        <input type="mail" name="mail" placeholder="Введите свою почту"></input>
                         <label>Ваш пароль:</label>
                         <input type="password" name="password" placeholder="Введите свой пароль"></input>
-                        <button class="registerSubmitButton" type="submit">ВОЙТИ</button>
-                        <span>Вы еще не зарегистрированы?<br><a class="importantToSee" href="register.php">ЗАРЕГИСТРИРУЙТЕСЬ</a></span>
+                        <label>Повторите пароль:</label>
+                        <input type="password" name="password_reply" placeholder="Введите свой пароль"></input>
+                        <label>Соглашение с правилами:</label>
+                        <input class="checkboxRules" type="checkbox" name="rules" value="1"></input>
+                        <button class="registerSubmitButton" type="submit">ЗАРЕГИСТРИРОВАТЬСЯ</button>
+                        <span>Уже есть аккаунт?<br><a class="importantToSee" href="login.php">ВОЙДИТЕ</a></span>
                     </form>
                 </div>
             </div>

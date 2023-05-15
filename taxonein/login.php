@@ -34,7 +34,7 @@ require_once __DIR__ . '../php/connect.php';
         <div class="container">
             <div class="alert displayNone">
                 <div class="alertHead"><span>Оповещение</span><img class="alertClose" src="img/system/minus.png"></div>
-                <div><span class="alertBody">Тестовое Тестовое Тестовое Тестовое Тестовое</span></div>
+                <div><span class="alertBody"></span></div>
             </div>
             <div class="textBlock"><span>Вход в личный кабинет:</span></div>
             <div class="center">
