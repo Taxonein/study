@@ -19,6 +19,10 @@
     .menuwrap{
         display: block;
     }
+    .mainHello{
+        height: 300px !important;
+        background-size: 100% 300px !important;
+    }
 }
 @media (min-width: 971px){
     .menuwrap{
@@ -78,6 +82,7 @@ body{
     padding: 0 10px 0 15px;
     font-size: 24px;
     align-self: center;
+    cursor: pointer;
 }
 .menu{
     height: 40px;
@@ -147,6 +152,13 @@ header{
     display: flex;
     justify-content: center;
 }
+.textcenter{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
 .wrapper{
     display: flex;
     flex-direction: column;
@@ -158,17 +170,40 @@ footer{
     display: flex;
     font-size: 25px;
     width: 100%;
-    justify-content: space-around;
     margin-bottom: 0;
     flex: 0 0 auto;
+    flex-direction: column;
+}
+.footerMain{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.footerMain div:nth-child(2) div{
+    height: 100%;
+    display: flex;
+}
+.footerMain div:nth-child(2) div span{
+    display: flex;
+    align-self: center;
+}
+.footerMain div:nth-child(2) div span a{
+    margin: 0 5px 0 5px;
+}
+.footerReg{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+}
+.footerReg div span{
+    font-size: 25px;
+    font-weight: bold;
 }
 footer div img{
     width: 58px;
     height: 58px;
-    margin-right: 10px;
-}
-footer div:nth-child(1){
-    display: flex;
+    margin: 5px 5px 5px 5px;
 }
 .news{
     width: 100%;
@@ -207,12 +242,12 @@ footer div:nth-child(1){
     margin-top: 20px;
     display: flex;
     justify-content: center;
-    background-color: #35b451;
+    text-align: center;
 }
 .textBlock span{
     align-self: center;
     font-size: 30px;
-    color: white;
+    color: #1F6157;
 }
 .items{
     margin-top: 20px;
@@ -695,6 +730,7 @@ footer div:nth-child(1){
     display: flex;
     justify-content: center;
     flex-direction: column;
+    flex-wrap: wrap;
     background-color: #35b451;
     padding: 20px 0 0 0;
 }
@@ -711,11 +747,12 @@ footer div:nth-child(1){
 }
 .aboutSectorBody{
     display: flex;
+    justify-content: center;
 }
 .aboutSectorBody div{
     display: flex;
-    width: 50%;
     padding: 10px 10px 10px 10px;
+    text-align: center;
 }
 .aboutSectorBody div span{
     font-size: 20px;
@@ -724,6 +761,7 @@ footer div:nth-child(1){
 }
 .aboutSectorImgCenter{
     width: 100%;
+    height: auto;
     display: flex;
     margin-top: 20px;
 }
@@ -740,5 +778,108 @@ footer div:nth-child(1){
     display: flex;
     align-self: center;
     color: white;
+    font-size: 20px;
+}
+.mainHello{
+    width: 100%;
+    height: 800px;
+    background-image: url("../IMG/img1.jpg");
+    background-size: 100% 800px;
+    display: flex;
+    justify-content: center;
+}
+.mainHello div{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.mainHello div span{
+    display: flex;
+    flex-wrap: nowrap;
+    word-wrap: unset;
+    overflow-wrap: unset;
+    align-self: center;
+    text-align: center;
+    font-size: 35px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.mainHello div span:nth-child(1){
+    color: #08873f;
+    font-size: 60px;
+}
+.whatPanels{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.whatPanelsPanel{
+    display: flex;
+    width: 300px;
+    background-color: #2a773b;
+    border-radius: 10px;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5px;
+    margin: 10px;
+}
+.whatPanelsPanel div{
+    display: flex;
+    justify-content: center;
+}
+.whatPanelsPanel div:nth-child(1) span{
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: white;
+    text-align: center;
+}
+.whatPanelsPanel div:nth-child(2) span{
+    font-size: 20px;
+    text-align: center;
+    color: white;
+}
+.greenLine{
+    width: 100%;
+    height: 20px;
+    background-color: #1F6157;
+    margin: 30px 0 30px 0;
+}
+.colorTextGreen{
+    color: #08873f;
+    font-size: 25px;
+}
+.contactsSectorBody{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 2;
+}
+.contactsSectorInfo{
+    color: #555;
+    padding: 10px 0 10px 0;
+}
+.colorTextBlackGreen{
+    color: #045f20;
+    margin-left: 20px;
+}
+.textAlign{
+    text-align: center;
+}
+.aboutImg{
+    display: flex;
+    justify-content: center;
+}
+.aboutImg img{
+    display: flex;
+    align-self: center;
+    width: 100%;
+    height: auto;
+}
+.additionalSpace{
+    margin: 20px 0 20px 0;
+}
+.textHeight20{
     font-size: 20px;
 }

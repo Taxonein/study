@@ -10,6 +10,7 @@ $catalog =  $res->fetchAll();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style/style.css" type="text/css">
     <title>Skido4kin</title>
 </head>
@@ -17,9 +18,40 @@ $catalog =  $res->fetchAll();
 <div class="wrapper">
 <?php include 'header.php' ?>
     <div class="container">
+        <div class="mainHello">
+            <div><span>TiTBiT</span><span>Мы знак качества</span></div>
+        </div>
+        <div class="greenLine"></div>
+        <div class="whatPanels">
+            <div class="whatPanelsPanel" data-aos="fade-up">
+                <div>
+                    <span>Производство в России</span>
+                </div>
+                <div>
+                    <span>Благодаря производству находящимся в России, мы уменьшаем затраты на логистику и исключаем риски с перебоями продукции, благодаря чему потребитель всегда сможет приобрести нашу продукцию</span>
+                </div>
+            </div>
+            <div class="whatPanelsPanel" data-aos="fade-up">
+                <div>
+                    <span>Высококачественное сырье</span>
+                </div>
+                <div>
+                    <span>Мы не используем искусственных консервантов, красителей и генномодифицированных компонентов при производстве. Вся продукция изготавливается из отечественного сырья</span>
+                </div>
+            </div>
+            <div class="whatPanelsPanel" data-aos="fade-up">
+                <div>
+                    <span>Контроль качества</span>
+                </div>
+                <div>
+                    <span>Мы проводим строгий ветеринарный контроль входящего сырья и готового продукта. Вся выпускаемая продукция соответствует установленным ветеринарно-санитарным нормам и ГОСТ, а также в обязательном порядке декларируется</span>
+                </div>
+            </div>
+            <div class="greenLine"></div>
+        </div>
         <div class="news">
             <div class="newsHead"><span>Последние новости:</span><span>Дата: 06.05.2023</span></div>
-            <img src="img/about_logo.png"><span class="newsBody">Дорогие друзья, сегодня наш магазин официально открылся. Приветствуем всех!</span>
+            <img src="img/about_logo.png"><span class="newsBody">Уважаемые клиенты, недавно на нашем предприятии в рядах цехов обновилось оборудование контроля качества, по этой причине мы предлагаем вам купить нашу продукцию, и убедиться в этом на деле! Мы заботимся о ваших питомцах, с уважением, комманда TiTBiT</span>
         </div>
         <div class="textBlock">
             <span>
@@ -48,16 +80,10 @@ $catalog =  $res->fetchAll();
             <a href="catalog.php?category=5&page=1"><div><img src="img/accessories.png"><div class="categoryText"><span>Аксессуары</span></div></div></a>
         </div>
     </div>
-    <footer>
-        <div>
-            <div><img src="img/vk.png"><img src="img/youtube.png"></div>
-        </div>
-        <div>
-            <div>Адрес: 141801, Московская обл., г. Дмитров, ул. Дубненская, д.2, корп. 1, комн. 8<br>Телефон: +7(495) 902-62-92, +7(495) 579-28-52</div>
-        </div>
-    </footer>
+    <?php include 'footer.php' ?>
 </div>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

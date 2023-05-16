@@ -56,6 +56,7 @@ if ($page){
         <?php
         ?>
     </div>
+    <?php if($pagination > 1): ?>
     <div class="center">
             <div class="pageSelect">
                 <?php if ($page >= 2):?><a href="<?= $_SERVER['PHP_SELF'].'?page='.($page - 1)?>"><div><img src="img/prev.png"></div></a><?php else:?><a href=""><div><img src="img/prev.png"></div></a><?php endif;?>
@@ -79,14 +80,8 @@ if ($page){
             </div>
         </div>
     </div>
-    <footer>
-        <div>
-            <div><img src="img/vk.png"><img src="img/youtube.png"></div>
-        </div>
-        <div>
-            <div>Адрес: 141801, Московская обл., г. Дмитров, ул. Дубненская, д.2, корп. 1, комн. 8<br>Телефон: +7(495) 902-62-92, +7(495) 579-28-52</div>
-        </div>
-    </footer>
+    <?php endif;?>
+    <?php include 'footer.php' ?>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="js/main.js"></script>
 </body>

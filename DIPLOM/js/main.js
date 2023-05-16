@@ -1,3 +1,8 @@
+AOS.init({
+    offset: 120,
+    duration: 2000,
+});
+AOS.refresh();
 //LOGIN FORM SUBMIT
 $('.loginFormSubmit').on('click', function (e) {
     e.preventDefault();
@@ -211,3 +216,5 @@ $(document).mouseup(function (e){ // событие клика по веб-до�
       div.hide(); // скрываем его
     }
   });
+
+

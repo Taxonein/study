@@ -1,8 +1,5 @@
 <?php
-require_once __DIR__ . '../connect.php';
-
-$res = $pdo->query("SELECT * FROM `catalog` ORDER BY id DESC LIMIT 0,10;");
-$catalog =  $res->fetchAll();
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,6 +14,7 @@ $catalog =  $res->fetchAll();
 <div class="wrapper">
 <?php include 'header.php' ?>
     <div class="container">
+        <div class="center colorTextGreen textAlign additionalSpace">TiTBiT™ является одним из крупнейших российских производителей кормов и лакомств для домашних питомцев.</span></div>
         <div class="aboutSector">
             <div class="aboutSectorHead"><span>О НАС</span></div>
             <div class="aboutSectorBody">
@@ -24,25 +22,45 @@ $catalog =  $res->fetchAll();
                     <span>
                     Профессиональная команда понимает потребности домашних животных. Поэтому обширный и разнообразный ассортимент TiTBiT.ru максимально полно обеспечивает всем необходимым наших подопечных. Мы отвечаем за их аппетит, здоровье, веселый нрав и правильное развитие.<br><br>
                     Не нужно тратить много времени, посещать различные зоомагазины в поисках безопасных натуральных лакомств для любимого домашнего питомца, а также нести тяжелые пакеты с кормом.
-                    </span>
-                </div>
-                <div>
-                    <span>
                     Сегодня недорого приобрести в нашем магазине действительно качественную продукцию без искусственных консервантов, красителей и ароматизаторов может житель любого российского уголка. В регионы доставка зоотоваров осуществляется компанией EMS Russian Post, в Москве и МО продукция доставляется бесплатно. Наши сбалансированные корма и лакомства одобрены и рекомендованы ветеринарами для ежедневного использования домашними животными. Сертифицированная качественная продукция принесет вашему любимцу отменное здоровье и удовольствие.
-                    </span>
+                </span>
                 </div>
             </div>
             <div class="aboutSectorImgCenter"><img src="img/about_bottom.png"></div>
         </div>
+        <div class="greenLine"></div>
+        <div class="aboutImg"><img src="IMG/about1.jpg"></div>
+        <div class="textcenter additionalSpace">
+            <span class="colorTextGreen">
+                Торговая марка TiTBiT™
+            </span>
+            <span class="textHeight20">
+            представлена на рынке зоотоваров с 2000 года и за прошедшее время продукция завоевала доверие и стала хорошо известна не только на территории России, но и за рубежом.
+            </span>
+        </div>
+        <div class="greenLine"></div>
+        <div class="aboutImg"><img src="IMG/about2.png"></div>
+        <div class="textcenter additionalSpace">
+            <span class="colorTextGreen">
+                Торговая марка TiTBiT™
+            </span>
+            <span class="textHeight20">
+            насчитывает более 500 наименований лакомств для всех видов домашних животных (из субпродуктов высококачественного сырья: говядины, баранины, телятины, кролика, птицы, рыбы), сухие корма для собак и кошек, корма для птиц и грызунов, аксессуары.
+            </span>
+        </div>
+        <div class="greenLine"></div>
+        <div class="aboutImg"><img src="IMG/about3.png"></div>
+        <div class="textcenter additionalSpace">
+            <span class="colorTextGreen">
+                Торговая марка TiTBiT™
+            </span>
+            <span class="textHeight20">
+            настолько завоевала доверие потребителя, что к сотрудничеству с нами стремится большинство специализированных торговых точек РФ. Об этом говорит статистика: лакомства представлены в 98% всех зоомагазинов и 70% магазинов сетевого продуктового ритейла.
+            </span>
+        </div>
+        <div class="greenLine"></div>
     </div>
-    <footer>
-        <div>
-            <div><img src="img/vk.png"><img src="img/youtube.png"></div>
-        </div>
-        <div>
-            <div>Адрес: 141801, Московская обл., г. Дмитров, ул. Дубненская, д.2, корп. 1, комн. 8<br>Телефон: +7(495) 902-62-92, +7(495) 579-28-52</div>
-        </div>
-    </footer>
+    <?php include 'footer.php' ?>
 </div>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="js/main.js"></script>
