@@ -51,9 +51,9 @@ $categoriesname = $categoriesquery->fetch();
         <?php if (!empty($catalog)): ?>
             <?php foreach ($catalog as $item): ?>
                 <div class="item">
-                    <a href="itempage.php?id=<?php echo $item['id'];?>">
+                    <a href="user/itempage.php?id=<?php echo $item['id'];?>">
                     <div class="itemImg"><?php if($item['photo']):?><img src="<?= $item['photo']?>"></div><?php else:?><img src="img/catalog/nothing.png"></div><?php endif;?>
-                    <div class="itemPrice"><span><?= $item['price']?>Р</span><?php if ($item['price_before'] >= 1):?><span><div class="priceBeforeLine"></div><?=$item['price_before']?>Р</span><?php endif;?></div>
+                        <div class="itemPrice"><span><?= $item['price']?>Р</span><?php if ($item['price_before'] >= 1):?><span><div class="priceBeforeLine"></div><?=$item['price_before']?>Р</span><?php endif;?></div>
                     <div class="itemName"><span><?= $item['name']?></span></div>
                     </a>
                 </div>
@@ -62,6 +62,7 @@ $categoriesname = $categoriesquery->fetch();
         </div>
     </div>
 </div>
+<?php if($pagination > 1): ?>
 <div class="center">
             <div class="pageSelect">
                 <?php if ($page >= 2):?><a href="<?= $_SERVER['PHP_SELF'] .'?category='. $categoryid .'&page='.($page - 1)?>"><div><img src="img/prev.png"></div></a><?php else:?><a href=""><div><img src="img/prev.png"></div></a><?php endif;?>
@@ -84,14 +85,8 @@ $categoriesname = $categoriesquery->fetch();
                 <?php if (($page != $pages)):?><a href="<?= $_SERVER['PHP_SELF'] .'?category='. $categoryid .'&page='.($page + 1)?>"><div><img src="img/next.png"></div></a><?php else:?><a href=""><div><img src="img/next.png"></div></a><?php endif;?>
             </div>
         </div>
-    <footer>
-        <div>
-            <div><img src="img/vk.png"><img src="img/youtube.png"></div>
-        </div>
-        <div>
-            <div>Адрес: 141801, Московская обл., г. Дмитров, ул. Дубненская, д.2, корп. 1, комн. 8<br>Телефон: +7(495) 902-62-92, +7(495) 579-28-52</div>
-        </div>
-    </footer>
+        <?php endif;?>
+        <?php include 'footer.php' ?>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="js/main.js"></script>
 </body>

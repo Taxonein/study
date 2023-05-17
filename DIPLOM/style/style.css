@@ -42,6 +42,28 @@
         width: 400px !important;
     }
 }
+@media (min-width: 701px){
+
+}
+@media (max-width: 700px){
+    .itemPageImg{
+        width: 100% !important;
+        max-height: 500px;
+        height: auto !important;
+        justify-content: center;
+        text-align: center;
+    }
+    .itemPageImg img{
+        width: 80% !important;
+        max-height: 500px;
+        height: auto !important;
+    }
+    .itemPageItem{
+        display: flex;
+        flex-direction: column !important;
+        justify-content: center;
+    }
+}
 @media (max-width: 560px){
     .news img{
         width: 100% !important;
@@ -129,12 +151,13 @@ header{
     z-index: 999;
     top: 0px;
     width: 100%;
-    background-color: aqua;
+    background-color: #045f20;
 }
 .catalogButtons{
     display: flex;
     width: 100%;
     justify-content: center;
+    color: white;
 }
 .catalogButtons div{
     display: flex;
@@ -186,9 +209,14 @@ footer{
 .footerMain div:nth-child(2) div span{
     display: flex;
     align-self: center;
+    flex-wrap: wrap;
 }
 .footerMain div:nth-child(2) div span a{
     margin: 0 5px 0 5px;
+}
+.footerMain div:nth-child(1) div{
+    display: flex;
+    flex-wrap: wrap;
 }
 .footerReg{
     display: flex;
@@ -335,7 +363,7 @@ footer div img{
 .itemPageName{
     width: 100%;
     padding: 5px 0px 5px 0px;
-    background-color: rgb(16, 196, 76);
+    background-color: #045f20;
     display: flex;
 }
 .itemPageName span{
@@ -355,22 +383,46 @@ footer div img{
 .itemPageDesc{
     display: flex;
     width: 100%;
+    font-size: 20px;
 }
-.itemPagePrice span:nth-child(1){
+.itemPagePrice{
+    display: flex;
+}
+.itemPagePriceMain{
+    display: flex;
     align-self: center;
-    font-size: 23px;
     font-weight: 900;
     padding: 8px;
     background-color: rgb(16, 196, 76);
     color: white;
     border-radius: 15px;
+    font-size: 20px;
 }
-.itemPagePrice span:nth-child(2){
+.itemPagePriceDiscountDiv{
+    display: flex;
+    position: relative;
+}
+.itemPageCostBlock{
+    display: flex;
+    flex-direction: row;
+}
+.itemPageCostBlock div{
+    margin: 10px 5px 10px 5px;
+}
+.itemPagePriceDiscountLine{
+    width: 100%;
+    height: 1px;
+    background-color: red;
+    margin: 0 !important;
+    top: 45%;
+    transform: rotate(5deg);
+    position: absolute;
+}
+.itemPagePriceDiscount{
+    display: flex;
     align-self: center;
-    padding: 8px;
-    font-size: 18px;
-    border-radius: 15px;
-    color: rgb(112, 127, 141);
+    font-size: 20px;
+    color: rgb(112, 127, 141);;
 }
 .priceBeforeLine{
     background-color: red;
@@ -380,16 +432,10 @@ footer div img{
     top: 10px;
     transform: rotate(5deg);
 }
-.itemPageInfo{
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
 .itemPagePrice{
     display: flex;
-    width: 400px;
     justify-content: center;
+    margin: 0;
 }
 .addToCart{
     display: flex;
@@ -403,9 +449,6 @@ footer div img{
     border: unset;
     outline: none;
     cursor: pointer;
-}
-.addToCartDiv{
-
 }
 .userForm{
     display: flex;
@@ -552,12 +595,8 @@ footer div img{
     font-size: 25px;
     color: white;
 }
-.cartItemDescription{
-    /* overflow: hidden; */
-}
 .cartItemDescription span{
     font-size: 20px;
-    /* overflow: hidden; */
 }
 .cartItemManage{
     display: flex;
@@ -670,8 +709,9 @@ footer div img{
     margin-top: 20px;
     display: flex;
     justify-content: center;
-    height: 40px;
+    min-height: 40px;
     background-color: #35b451;
+    text-align: center;
 }
 .profileTextBlock span{
     align-self: center;
@@ -710,7 +750,7 @@ footer div img{
     flex-wrap: wrap;
 }
 .forHeader{
-    height: 40px;
+    min-height: 40px;
     display: flex;
 }
 .pageSelect{
@@ -882,4 +922,10 @@ footer div img{
 }
 .textHeight20{
     font-size: 20px;
+}
+.itemPageInfo{
+    display: flex;
+    flex-direction: column ;
+    justify-content: center;
+    align-items: center;
 }

@@ -72,12 +72,12 @@ global $carttotalprice;
                 <?php endforeach; ?>
             <?php endif; ?>
         </div>
-        <?php if (!$cart['cart']){
+        <?php if ((!($cart['cart']) && ($_SESSION['user']))){
             echo '<div class="textBlock"><span>Ваша корзина пуста :( Добавьте сюда что-нибудь!</span></div>';
         }
         ?>
         <?php if (!$_SESSION['user']){
-            echo '<div class="textBlock"><span>Оформить заказ могут только зарегистрированные пользователи</span></div>';
+            echo '<div class="textBlock"><span>Корзиной могут пользоваться только зарегистрированные пользователи</span></div>';
         }
         ?>
         <?php if ($cart['cart']): ?>
@@ -91,14 +91,7 @@ global $carttotalprice;
         </div>
         <?php endif;?>
     </div>
-    <footer>
-        <div>
-            <div><img src="../img/vk.png"><img src="../img/youtube.png"></div>
-        </div>
-        <div>
-            <div>Адрес: 141801, Московская обл., г. Дмитров, ул. Дубненская, д.2, корп. 1, комн. 8<br>Телефон: +7(495) 902-62-92, +7(495) 579-28-52</div>
-        </div>
-    </footer>
+    <?php include 'footer.php' ?>
 </div>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="../js/main.js"></script>

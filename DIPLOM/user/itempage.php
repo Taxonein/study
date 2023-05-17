@@ -29,9 +29,20 @@ $catalog = $res->fetchAll();
                     <div class="itemPageImg"><?php if($item['photo']):?><img src="../<?=$item['photo']?>"><?php else:?><img src="../img/catalog/nothing.png"><?php endif?></div>
                     <div class="itemPageDesc"><span><?= $item['description']?></span></div>
                 </div>
+                
                 <div class="itemPageInfo">
-                    <div class="itemPagePrice"><span><?= $item['price'] ?>Р</span><?php if ($item['price_before'] >= 1):?><span><div class="priceBeforeLine"></div><?=$item['price_before']?>Р</span><?php endif;?></div class="addToCartDiv"><form><input class="displayNone" name="id" type="text" value="<?= $id?>"><input type="submit" value="Добавить в корзину" class="addToCart"></div>
+                    <div class="itemPageCostBlock">
+                        <div class="itemPagePrice"><div class="itemPagePriceMain"><span><?= $item['price'] ?>Р</span></div></div>
+                <?php if ($item['price_before'] >= 1):?>
+                    <div class="itemPagePriceDiscountDiv"><div class="itemPagePriceDiscountLine"></div><span class="itemPagePriceDiscount"><?=$item['price_before']?></span></div>
+                <?php endif;?>
                 </div>
+                <?php if ($_SESSION['user']):?><div class="addToCartDiv"><form><input class="displayNone" name="id" type="text" value="<?= $id?>"><input type="submit" value="Добавить в корзину" class="addToCart"></form></div><?php else:?><div class="textBlock"><span>Чтобы добавить в корзину войдите в аккаунт!</span></div><?php endif;?>
+                </div>
+
+
+
+
             <?php endforeach; ?>
         <?php endif; ?>
         <div class="flexCenter">
@@ -39,14 +50,7 @@ $catalog = $res->fetchAll();
             <span class="formMsg displayNone"></span>
         </div>
     </div>
-    <footer>
-        <div>
-            <div><img src="../img/vk.png"><img src="../img/youtube.png"></div>
-        </div>
-        <div>
-            <div>Адрес: 141801, Московская обл., г. Дмитров, ул. Дубненская, д.2, корп. 1, комн. 8<br>Телефон: +7(495) 902-62-92, +7(495) 579-28-52</div>
-        </div>
-    </footer>
+    <?php include 'footer.php' ?>
 </div>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="../js/main.js"></script>

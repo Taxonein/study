@@ -63,6 +63,6 @@ session_start();
     <?php include 'footer.php' ?>
 </div>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>

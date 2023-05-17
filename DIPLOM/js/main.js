@@ -1,8 +1,3 @@
-AOS.init({
-    offset: 120,
-    duration: 2000,
-});
-AOS.refresh();
 //LOGIN FORM SUBMIT
 $('.loginFormSubmit').on('click', function (e) {
     e.preventDefault();
@@ -176,8 +171,6 @@ $('.cartTotalOrder').on('click', function (e) {
         }
     });    
 });
-
-
 $('.catalogDiv').click(function(){ 
     $(".catalog").css("opacity", "0");
     $(".catalog").css("top", "0");
