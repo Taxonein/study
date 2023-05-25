@@ -183,6 +183,7 @@ $('.catalogDiv').click(function(){
         $(".catalog").css("display", "none");
     }
 });
+
 $('.menuwrap').click(function(){ 
     $(".menuDiv").css("opacity", "0");
     $(".menuDiv").css("top", "0");
@@ -196,12 +197,15 @@ $('.menuwrap').click(function(){
     }
 });
 $(document).mouseup(function (e){ // событие клика по веб-документу
-    var div = $(".menuDiv"); // тут указываем ID элемента
-    if (!div.is(e.target) // если клик был не по нашему блоку
+    var div = $(".menuDiv");
+    var div = $(".menuwrap"); // тут указываем ID элемента
+    if (!div.is(e.target) && div.is(e.target)   // если клик был не по нашему блоку
         && div.has(e.target).length === 0) { // и не по его дочерним элементам
-      div.hide(); // скрываем его
+            div.hide(); // скрываем его
     }
   });
+
+
   $(document).mouseup(function (e){ // событие клика по веб-документу
     var div = $(".catalog"); // тут указываем ID элемента
     if (!div.is(e.target) // если клик был не по нашему блоку
