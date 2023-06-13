@@ -32,7 +32,7 @@ $userinfo = $userinfoquery->fetch();
                 <?php if($userinfo['img']):?><img src="../<?= $userinfo['img']?>"><?php else:?><img src="../img/nothing.png"><?php endif;?>
                 <form class="userForm" action="userchange.php" method="POST" enctype='multipart/form-data'>
                     <label>Загрузить новое фото профиля:</label>
-                    <input name="userimg" type="file">
+                    <input class="imginp" name="userimg" type="file">
                     <button type="submit">ЗАГРУЗИТЬ</button>
                 </form>
             </div>
@@ -79,7 +79,7 @@ $userinfo = $userinfoquery->fetch();
                             $itembase = $itemquery->fetch();
                         ?>
                         <div class="orderInProcess">
-                            <div class="orderInProcessBody"><span><?=$itembase['name']?></span><span>Кол-во: <?=$usercartexplode['1']?>шт</span></div>
+                            <div class="orderInProcessBody"><a href="itempage.php?id=<?php echo $itembase['id'];?>"><span><?=$itembase['name']?></span></a><span>Кол-во: <?=$usercartexplode['1']?>шт</span></div>
                             <hr>
                         </div>
                         <?php endforeach;?>
@@ -106,7 +106,7 @@ $userinfo = $userinfoquery->fetch();
                             $itembase = $itemquery->fetch();
                         ?>
                         <div class="orderInProcess">
-                            <div class="orderInProcessBody"><span><?=$itembase['name']?></span><span>Кол-во: <?=$usercartexplode['1']?>шт</span></div>
+                            <div class="orderInProcessBody"><a href="itempage.php?id=<?php echo $itembase['id'];?>"><span><?=$itembase['name']?></span></a><span>Кол-во: <?=$usercartexplode['1']?>шт</span></div>
                             <hr>
                         </div>
                         <?php endforeach;?>

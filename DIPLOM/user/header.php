@@ -23,14 +23,20 @@ $categories= $categoriesquery->fetchAll();
     </header>
     <div class="menuDiv">
     <div class="menuDivButtons">
-            <a href="index.php">Главная</a>
-            <a href="about.php">О нас</a>
-            <a href="contacts.php">Контакты</a>
-            <a href="promo.php?page=1">Акции</a>
+            <a href="../index.php">Главная</a>
+            <a href="../about.php">О нас</a>
+            <a href="../contacts.php">Контакты</a>
+            <a href="../promo.php?page=1">Акции</a>
         </div>
         <div class="menuDivUser">
-            <a href="user/cart.php"><img src="../img/cart.png"></a>
-            <a href="user/profile.php"><img src="../img/user.png"></a>
+            <a href="cart.php"><img src="../img/cart.png"></a>
+            <a href="profile.php"><img src="../img/user.png"></a>
+        </div>
+        <div class="menuDivCategories">
+            <span>Категории</span>
+            <?php foreach($categories as $category):?>
+                <a href="../catalog.php?category=<?= $category['id']?>&page=1"><?= $category['name']?></a>
+            <?php endforeach;?>
         </div>
     </div>
     <div class="catalog">

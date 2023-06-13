@@ -1,7 +1,7 @@
 <?php
 
-$host = 'localhost';
-$db = 'diplom';
+$host = '192.168.0.3';
+$db = 'DIPLOM';
 $user = 'root';
 $pass = '';
 $charset = 'utf8';

@@ -51,9 +51,10 @@ $('.registerSubmitButton').on('click', function (e) {
         dataType: "json",
         success: function (data) {
             if (data.status){
-                document.location.href= '../user/profile.php';
+                // document.location.href= '../user/profile.php';
                 $('.formMsg').removeClass('displayNone').text(data.message);
                 $('.loadGif').addClass('displayNone');
+                setTimeout(() => {  window.location= "../user/profile.php"; }, 3000);
             }else{
                 $('.formMsg').removeClass('displayNone').text(data.message);
                 $('.loadGif').addClass('displayNone');
@@ -162,12 +163,11 @@ $('.cartTotalOrder').on('click', function (e) {
         },
         dataType: "json",
         success: function (data) {
-            if (data.status){
-                window.location.href= '../user/cart.php';
-                location.reload();
-            }
             $('.loadGif').addClass('displayNone');
             $('.formMsg').removeClass('displayNone').text(data.message);
+            if (data.status){
+                setTimeout(() => {  window.location= "profile.php"; }, 3000);
+            }
         }
     });    
 });

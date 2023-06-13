@@ -32,6 +32,12 @@ $categories= $categoriesquery->fetchAll();
             <a href="user/cart.php"><img src="../img/cart.png"></a>
             <a href="user/profile.php"><img src="../img/user.png"></a>
         </div>
+        <div class="menuDivCategories">
+            <span>Категории</span>
+            <?php foreach($categories as $category):?>
+                <a href="../catalog.php?category=<?= $category['id']?>&page=1"><?= $category['name']?></a>
+            <?php endforeach;?>
+        </div>
     </div>
     <div class="catalog">
         <div class="catalogButtons">
